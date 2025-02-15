@@ -48,3 +48,4 @@ Chương trình được tổ chức thành các thành phần chính như sau:
 5.  **Thao tác với chương trình:** Chương trình sẽ hiển thị một menu. Người dùng nhập các số tương ứng với các chức năng để thực hiện các thao tác thêm, xóa, cập nhật, tìm kiếm, và hiển thị danh sách sinh viên.
 
 ## Giao diện
+* Xem trong folder images
