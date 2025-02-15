@@ -1,7 +1,4 @@
-# CSC13010_22KTPM3
-# Báo cáo: Chương trình Quản Lý Sinh Viên
-
-Em xin trình bày báo cáo về chương trình Quản Lý Sinh Viên, một ứng dụng Python đơn giản được xây dựng để quản lý thông tin sinh viên. Chương trình có các chức năng cơ bản như thêm, xóa, cập nhật, tìm kiếm và hiển thị danh sách sinh viên.
+Em xin trình bày báo cáo ngắn về chương trình Quản Lý Sinh Viên, một ứng dụng Python đơn giản được xây dựng để quản lý thông tin sinh viên. Chương trình có các chức năng cơ bản như thêm, xóa, cập nhật, tìm kiếm và hiển thị danh sách sinh viên.
 
 ## Cấu trúc mã nguồn
 
@@ -46,6 +43,3 @@ Chương trình được tổ chức thành các thành phần chính như sau:
     ```
 
 5.  **Thao tác với chương trình:** Chương trình sẽ hiển thị một menu. Người dùng nhập các số tương ứng với các chức năng để thực hiện các thao tác thêm, xóa, cập nhật, tìm kiếm, và hiển thị danh sách sinh viên.
-
-## Giao diện
-* Xem trong folder images
