@@ -37,5 +37,18 @@
         "email": "vlvtu22@gmail.com",
         "sdt": "0345678123",
         "tinh_trang": "Đang học"
+    },
+    {
+        "mssv": "SV005",
+        "ho_ten": "Lê Minh Khuê",
+        "ngay_sinh": "25/12/2003",
+        "gioi_tinh": "Nữ",
+        "khoa": "Khoa Báo Chí",
+        "khoa_hoc": "K23",
+        "chuong_trinh": "Chuẩn",
+        "dia_chi": "12 Điện Biên Phủ",
+        "email": "lewikhue@gmail.com",
+        "sdt": "0987654345",
+        "tinh_trang": "Tạm dừng học"
     }
 ]

@@ -2,17 +2,20 @@ import json
 from models.sinhvien import SinhVien
 from utils.validation import kiem_tra_email, kiem_tra_sdt, kiem_tra_ngay_sinh
 from utils.file_io import load_sinhvien_data, save_sinhvien_data, load_json_file
-from services.khoa_service import KhoaService  # Import KhoaService
-
+from services.khoa_service import KhoaService
+from services.chuongtrinh_service import ChuongTrinhService
+from services.tinhtrang_service import TinhTrangService
 
 class SinhVienService:
   def __init__(self, sinhvien_data_file="data/sinhvien.json", khoa_file="data/khoa.json", tinh_trang_file="data/tinhtrang.json", chuong_trinh_file="data/chuongtrinh.json"):
     self.sinhvien_data_file = sinhvien_data_file
     self.danh_sach_sinh_vien = load_sinhvien_data(sinhvien_data_file)
-    self.khoa_service = KhoaService(khoa_file)  # Tạo instance của KhoaService
-    self.danh_sach_khoa = self.khoa_service.danh_sach_khoa  # Lấy danh sách khoa
-    self.danh_sach_tinh_trang = load_json_file(tinh_trang_file)
-    self.danh_sach_chuong_trinh = load_json_file(chuong_trinh_file)
+    self.khoa_service = KhoaService(khoa_file)
+    self.danh_sach_khoa = self.khoa_service.danh_sach_khoa
+    self.chuong_trinh_service = ChuongTrinhService(chuong_trinh_file)
+    self.danh_sach_chuong_trinh = self.chuong_trinh_service.danh_sach_chuong_trinh
+    self.tinh_trang_service = TinhTrangService(tinh_trang_file) 
+    self.danh_sach_tinh_trang = self.tinh_trang_service.danh_sach_tinh_trang 
 
   def them_sinh_vien(self):
     print("\nThêm sinh viên mới:")
@@ -22,7 +25,7 @@ class SinhVienService:
     gioi_tinh = input("Nhập giới tính (Nam/Nữ/Khác): ")
     khoa = self._nhap_khoa()
     khoa_hoc = input("Nhập khóa: ")
-    chuong_trinh = input("Nhập chương trình: ")
+    chuong_trinh = self._nhap_chuong_trinh()
     dia_chi = input("Nhập địa chỉ: ")
     email = self._nhap_email()
     sdt = self._nhap_sdt()
@@ -89,7 +92,6 @@ class SinhVienService:
     if not self.danh_sach_sinh_vien:
       print("[]")
       return
-    # Dùng to_dict để hiển thị, tránh lộ cấu trúc class SinhVien ra ngoài
     data = [sv.to_dict() for sv in self.danh_sach_sinh_vien]
     print(json.dumps(data, ensure_ascii=False, indent=4))
 
@@ -111,18 +113,18 @@ class SinhVienService:
       print("Ngày sinh không hợp lệ. Vui lòng nhập lại theo định dạng dd/mm/yyyy.")
 
   def _nhap_khoa(self, default_value=""):
-    self.khoa_service.hien_thi_danh_sach_khoa() 
+    self.khoa_service.hien_thi_danh_sach_khoa()
     while True:
       khoa = input(f"Nhập khoa ({default_value}): ") or default_value
-      if khoa in self.khoa_service.danh_sach_khoa or khoa == "":  # Kiểm tra trong danh sách khoa
+      if khoa in self.khoa_service.danh_sach_khoa or khoa == "":
         return khoa
       print("Khoa không hợp lệ. Vui lòng chọn một trong các khoa đã liệt kê.")
 
   def _nhap_chuong_trinh(self, default_value=""):
-    print("Danh sách chương trình:", ", ".join(self.danh_sach_chuong_trinh))
+    self.chuong_trinh_service.hien_thi_danh_sach_chuong_trinh()
     while True:
       chuong_trinh = input(f"Nhập chương trình ({default_value}): ") or default_value
-      if chuong_trinh in self.danh_sach_chuong_trinh or chuong_trinh == "":
+      if chuong_trinh in self.chuong_trinh_service.danh_sach_chuong_trinh or chuong_trinh == "":
         return chuong_trinh
       print("Chương trình không hợp lệ.  Vui lòng chọn một trong các chương trình đã liệt kê")
 
@@ -141,9 +143,9 @@ class SinhVienService:
       print("Số điện thoại không hợp lệ. Vui lòng nhập lại.")
 
   def _nhap_tinh_trang(self, default_value=""):
-    print("Tình trạng sinh viên:", ", ".join(self.danh_sach_tinh_trang))
+    self.tinh_trang_service.hien_thi_danh_sach_tinh_trang() 
     while True:
       tinh_trang = input(f"Nhập tình trạng ({default_value}): ") or default_value
-      if tinh_trang in self.danh_sach_tinh_trang or tinh_trang == "":
+      if tinh_trang in self.tinh_trang_service.danh_sach_tinh_trang or tinh_trang == "":  
         return tinh_trang
       print("Tình trạng không hợp lệ. Vui lòng chọn một trong các tình trạng đã liệt kê.")
