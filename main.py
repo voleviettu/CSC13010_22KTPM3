@@ -1,11 +1,12 @@
 import re
 import datetime
+import json
 
 class SinhVien:
     def __init__(self, mssv, ho_ten, ngay_sinh, gioi_tinh, khoa, khoa_hoc, chuong_trinh, dia_chi, email, sdt, tinh_trang):
         self.mssv = mssv
         self.ho_ten = ho_ten
-        self.ngay_sinh = ngay_sinh  
+        self.ngay_sinh = ngay_sinh
         self.gioi_tinh = gioi_tinh
         self.khoa = khoa
         self.khoa_hoc = khoa_hoc
@@ -25,7 +26,7 @@ def kiem_tra_email(email):
 
 
 def kiem_tra_sdt(sdt):
-    pattern = r"^(0|\+84)(\d{9})$"  
+    pattern = r"^(0|\+84)(\d{9})$"
     return re.match(pattern, sdt) is not None
 
 def kiem_tra_ngay_sinh(ngay_sinh):
@@ -44,7 +45,7 @@ def them_sinh_vien(danh_sach_sinh_vien):
         mssv = input("Nhập MSSV: ")
 
     ho_ten = input("Nhập họ tên: ")
-    
+
     ngay_sinh = input("Nhập ngày sinh (dd/mm/yyyy): ")
     while not kiem_tra_ngay_sinh(ngay_sinh):
       print("Ngày sinh không hợp lệ. Vui lòng nhập lại theo định dạng dd/mm/yyyy.")
@@ -99,7 +100,7 @@ def cap_nhat_sinh_vien(danh_sach_sinh_vien):
         if sv.mssv == mssv_can_cap_nhat:
             print("Nhập thông tin mới (để trống nếu không muốn thay đổi):")
             ho_ten = input(f"Họ tên ({sv.ho_ten}): ") or sv.ho_ten
-            
+
             ngay_sinh = input(f"Ngày sinh ({sv.ngay_sinh}) (dd/mm/yyyy): ") or sv.ngay_sinh
             while not kiem_tra_ngay_sinh(ngay_sinh):
               print("Ngày sinh không hợp lệ. Vui lòng nhập lại theo định dạng dd/mm/yyyy.")
@@ -126,13 +127,13 @@ def cap_nhat_sinh_vien(danh_sach_sinh_vien):
             while not kiem_tra_sdt(sdt) and sdt != "":
                 print("Số điện thoại không hợp lệ. Vui lòng nhập lại.")
                 sdt = input(f"Số điện thoại ({sv.sdt}): ") or sv.sdt
-            
+
             print("Tình trạng sinh viên: Đang học, Đã tốt nghiệp, Đã thôi học, Tạm dừng học")
             tinh_trang = input(f"Tình trạng ({sv.tinh_trang}): ") or sv.tinh_trang
             while tinh_trang not in ["Đang học", "Đã tốt nghiệp", "Đã thôi học", "Tạm dừng học"] and tinh_trang != "":
                 print("Tình trạng không hợp lệ. Vui lòng chọn một trong các tình trạng đã liệt kê.")
                 tinh_trang = input(f"Tình trạng ({sv.tinh_trang}): ") or sv.tinh_trang
-
+            
             sv.ho_ten = ho_ten
             sv.ngay_sinh = ngay_sinh
             sv.gioi_tinh = gioi_tinh
@@ -143,7 +144,7 @@ def cap_nhat_sinh_vien(danh_sach_sinh_vien):
             sv.email = email
             sv.sdt = sdt
             sv.tinh_trang = tinh_trang
-            
+
             print("Cập nhật thông tin thành công!")
             return
 
@@ -168,18 +169,79 @@ def tim_kiem_sinh_vien(danh_sach_sinh_vien):
             print(sv)
     else:
         print("Không tìm thấy sinh viên nào.")
-    
+
 
 def hien_thi_danh_sach(danh_sach_sinh_vien):
     print("\nDanh sách sinh viên:")
     if not danh_sach_sinh_vien:
-      print("Danh sách trống.")
-      return
-    for sv in danh_sach_sinh_vien:
-        print(sv)
+        print("[]") 
+        return
+
+    data = [
+        {
+            "MSSV": sv.mssv,
+            "Họ tên": sv.ho_ten,
+            "Ngày sinh": sv.ngay_sinh,
+            "Giới tính": sv.gioi_tinh,
+            "Khoa": sv.khoa,
+            "Khóa học": sv.khoa_hoc,
+            "Chương trình": sv.chuong_trinh,
+            "Địa chỉ": sv.dia_chi,
+            "Email": sv.email,
+            "SĐT": sv.sdt,
+            "Tình trạng": sv.tinh_trang,
+        }
+        for sv in danh_sach_sinh_vien
+    ]
+    print(json.dumps(data, ensure_ascii=False, indent=4))
+
+def load_data(filename="sinhvien.json"):
+    try:
+        with open(filename, "r", encoding="utf-8") as file:
+            data = json.load(file)
+            danh_sach_sinh_vien = []
+            for item in data:
+                sinh_vien = SinhVien(
+                    item["mssv"],
+                    item["ho_ten"],
+                    item["ngay_sinh"],
+                    item["gioi_tinh"],
+                    item["khoa"],
+                    item["khoa_hoc"],
+                    item["chuong_trinh"],
+                    item["dia_chi"],
+                    item["email"],
+                    item["sdt"],
+                    item["tinh_trang"],
+                )
+                danh_sach_sinh_vien.append(sinh_vien)
+            return danh_sach_sinh_vien
+    except (FileNotFoundError, json.JSONDecodeError):
+        return []
+
+
+def save_data(danh_sach_sinh_vien, filename="sinhvien.json"):
+    data = [
+        {
+            "mssv": sv.mssv,
+            "ho_ten": sv.ho_ten,
+            "ngay_sinh": sv.ngay_sinh,
+            "gioi_tinh": sv.gioi_tinh,
+            "khoa": sv.khoa,
+            "khoa_hoc": sv.khoa_hoc,
+            "chuong_trinh": sv.chuong_trinh,
+            "dia_chi": sv.dia_chi,
+            "email": sv.email,
+            "sdt": sv.sdt,
+            "tinh_trang": sv.tinh_trang,
+        }
+        for sv in danh_sach_sinh_vien
+    ]
+    with open(filename, "w", encoding="utf-8") as file:
+        json.dump(data, file, ensure_ascii=False, indent=4)
 
 def main():
-    danh_sach_sinh_vien = []
+    danh_sach_sinh_vien = load_data()
 
     while True:
         print("\n----- QUẢN LÝ SINH VIÊN -----")
@@ -194,10 +256,13 @@ def main():
 
         if lua_chon == '1':
             them_sinh_vien(danh_sach_sinh_vien)
+            save_data(danh_sach_sinh_vien)  
         elif lua_chon == '2':
             xoa_sinh_vien(danh_sach_sinh_vien)
+            save_data(danh_sach_sinh_vien)  
         elif lua_chon == '3':
             cap_nhat_sinh_vien(danh_sach_sinh_vien)
+            save_data(danh_sach_sinh_vien)
         elif lua_chon == '4':
             tim_kiem_sinh_vien(danh_sach_sinh_vien)
         elif lua_chon == '5':

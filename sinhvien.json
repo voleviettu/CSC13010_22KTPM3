@@ -1,0 +1,41 @@
+[
+    {
+        "mssv": "SV001",
+        "ho_ten": "Nguyễn Ngọc Phương Uyên",
+        "ngay_sinh": "07/01/2003",
+        "gioi_tinh": "Nữ",
+        "khoa": "Khoa Luật",
+        "khoa_hoc": "K21",
+        "chuong_trinh": "Chất lượng cao",
+        "dia_chi": "227 Nguyễn Văn Cừ",
+        "email": "nnnpuyen@example.com",
+        "sdt": "0987654321",
+        "tinh_trang": "Đang học"
+    },
+    {
+        "mssv": "SV002",
+        "ho_ten": "Lưu Thanh Thúy",
+        "ngay_sinh": "16/01/2002",
+        "gioi_tinh": "Nữ",
+        "khoa": "Khoa Tiếng Anh thương mại",
+        "khoa_hoc": "K18",
+        "chuong_trinh": "Đại trà",
+        "dia_chi": "432 Cao Thắng",
+        "email": "ltthuy161@example.com",
+        "sdt": "0912345678",
+        "tinh_trang": "Đã tốt nghiệp"
+    },
+    {
+        "mssv": "SV004",
+        "ho_ten": "Võ Lê Việt Tú",
+        "ngay_sinh": "02/03/2004",
+        "gioi_tinh": "Nữ",
+        "khoa": "Khoa Tiếng Pháp",
+        "khoa_hoc": "K22",
+        "chuong_trinh": "Chất lượng cao",
+        "dia_chi": "123 Đồng Khởi",
+        "email": "vlvtu22@gmail.com",
+        "sdt": "0345678123",
+        "tinh_trang": "Đang học"
+    }
+]
