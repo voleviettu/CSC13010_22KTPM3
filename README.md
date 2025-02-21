@@ -49,14 +49,11 @@ Chương trình được tổ chức thành các thành phần chính như sau:
 
 ## Logging Mechanism
 
-Hệ thống sử dụng cơ chế logging để ghi lại các hoạt động và lỗi xảy ra trong quá trình chạy chương trình. Các log được ghi vào các file log riêng biệt cho từng module:
-
-- `app.log`: Ghi lại các hoạt động và lỗi chung của hệ thống.
-- `validation.log`: Ghi lại các hoạt động và lỗi liên quan đến việc kiểm tra dữ liệu (email, số điện thoại, ngày sinh).
+Hệ thống sử dụng cơ chế logging để ghi lại các hoạt động và lỗi xảy ra trong quá trình chạy chương trình. Các log được ghi vào file `app.log`.
 
 ## Hướng dẫn cài đặt và chạy chương trình
 
-1.  **Tải file mã nguồn:** Tải file mã nguồn Python (`.py`) về máy tính. (Giả sử tên file là `quan_ly_sinh_vien.py`).
+1.  **Tải file mã nguồn:** Tải file mã nguồn Python (`.py`) về máy tính. (Giả sử tên file là `main.py`).
 
 2.  **Mở Terminal/Command Prompt:** Mở cửa sổ dòng lệnh (Terminal trên Linux/macOS hoặc Command Prompt trên Windows).
 
@@ -73,6 +70,52 @@ Hệ thống sử dụng cơ chế logging để ghi lại các hoạt động v
     ```
 
 5.  **Thao tác với chương trình:** Chương trình sẽ hiển thị một menu. Người dùng nhập các số tương ứng với các chức năng để thực hiện các thao tác thêm, xóa, cập nhật, tìm kiếm, và hiển thị danh sách sinh viên.
+
+## Hướng dẫn sử dụng hệ thống
+
+### Menu chính
+
+Khi chạy chương trình, bạn sẽ thấy menu chính với các lựa chọn sau:
+
+----- CHỌN MỤC QUẢN LÝ -----
+
+Quản lý sinh viên
+Quản lý khoa
+Quản lý chương trình đào tạo
+Quản lý tình trạng
+Hiển thị thông tin phiên bản
+Thoát
+
+Nhập số tương ứng với lựa chọn của bạn và nhấn Enter.
+
+Khi chọn "1. Quản lý sinh viên", bạn sẽ thấy menu quản lý sinh viên.
+Khi chọn "2. Quản lý khoa", bạn sẽ thấy menu quản lý khoa.
+Khi chọn "3. Quản lý chương trình đào tạo", bạn sẽ thấy menu quản lý chương trình đào tạo.
+Khi chọn "4. Quản lý tình trạng", bạn sẽ thấy menu quản lý tình trạng.
+
+### Hiển thị thông tin phiên bản
+
+Khi chọn "5. Hiển thị thông tin phiên bản", chương trình sẽ hiển thị thông tin phiên bản từ file [version.txt].
+
+### Thoát chương trình
+
+Khi chọn "0. Thoát", chương trình sẽ kết thúc và thoát.
+
+## Test tính năng import dữ liệu
+
+### Import từ file CSV
+
+1. Chọn "1. Quản lý sinh viên" từ menu chính.
+2. Chọn "6. Import/Export dữ liệu" từ menu quản lý sinh viên.
+3. Chọn "1. Import từ file CSV".
+4. Nhập tên file [student.csv] và nhấn Enter.
+
+### Import từ file JSON
+
+1. Chọn "1. Quản lý sinh viên" từ menu chính.
+2. Chọn "6. Import/Export dữ liệu" từ menu quản lý sinh viên.
+3. Chọn "2. Import từ file JSON".
+4. Nhập tên file [student.json] và nhấn Enter.
 
 ## Giao diện
 

@@ -4,10 +4,18 @@ from services.chuongtrinh_service import ChuongTrinhService
 from services.tinhtrang_service import TinhTrangService
 import logging
 
-# Cấu hình logging để ghi log ra file
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', handlers=[
-    logging.FileHandler("app.log", encoding="utf-8"),
+    logging.FileHandler("app.log", encoding="utf-8")
 ])
+
+def show_version():
+    try:
+        with open("version.txt", "r") as file:
+            version_info = file.read()
+            print("\n----- THÔNG TIN PHIÊN BẢN -----")
+            print(version_info)
+    except FileNotFoundError:
+        print("Không tìm thấy file version.txt.")
 
 def menu_import_export(service):
     while True:
@@ -142,6 +150,7 @@ def main():
         print("2. Quản lý khoa")
         print("3. Quản lý chương trình đào tạo")
         print("4. Quản lý tình trạng")
+        print("5. Hiển thị thông tin phiên bản")
         print("0. Thoát")
 
         lua_chon = input("Nhập lựa chọn của bạn: ")
@@ -154,6 +163,8 @@ def main():
             menu_chuong_trinh(chuong_trinh_service)
         elif lua_chon == '4':
             menu_tinh_trang(tinh_trang_service)
+        elif lua_chon == '5':
+            show_version()
         elif lua_chon == '0':
             logging.info("Thoát chương trình.")
             print("Thoát chương trình.")
