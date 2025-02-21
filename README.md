@@ -79,19 +79,19 @@ Khi chạy chương trình, bạn sẽ thấy menu chính với các lựa chọ
 
 ----- CHỌN MỤC QUẢN LÝ -----
 
-Quản lý sinh viên
-Quản lý khoa
-Quản lý chương trình đào tạo
-Quản lý tình trạng
-Hiển thị thông tin phiên bản
-Thoát
+1. Quản lý sinh viên
+2. Quản lý khoa
+3. Quản lý chương trình đào tạo
+4. Quản lý tình trạng
+5. Hiển thị thông tin phiên bản
+6. Thoát
 
 Nhập số tương ứng với lựa chọn của bạn và nhấn Enter.
 
-Khi chọn "1. Quản lý sinh viên", bạn sẽ thấy menu quản lý sinh viên.
-Khi chọn "2. Quản lý khoa", bạn sẽ thấy menu quản lý khoa.
-Khi chọn "3. Quản lý chương trình đào tạo", bạn sẽ thấy menu quản lý chương trình đào tạo.
-Khi chọn "4. Quản lý tình trạng", bạn sẽ thấy menu quản lý tình trạng.
+- Khi chọn "1. Quản lý sinh viên", bạn sẽ thấy menu quản lý sinh viên.
+- Khi chọn "2. Quản lý khoa", bạn sẽ thấy menu quản lý khoa.
+- Khi chọn "3. Quản lý chương trình đào tạo", bạn sẽ thấy menu quản lý chương trình đào tạo.
+- Khi chọn "4. Quản lý tình trạng", bạn sẽ thấy menu quản lý tình trạng.
 
 ### Hiển thị thông tin phiên bản
 
