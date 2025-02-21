@@ -1,0 +1,8 @@
+mssv,ho_ten,ngay_sinh,gioi_tinh,khoa,khoa_hoc,chuong_trinh,dia_chi,email,sdt,tinh_trang
+SV007,Nguyễn Văn Nam,15/04/2002,Nam,Khoa Luật,K20,Chất lượng cao,456 Nguyễn Trãi,nvnam@example.com,0909123456,Đang học
+SV008,Trần Thị Hoa,20/09/2003,Nữ,Khoa Tiếng Anh thương mại,K21,Chuẩn,789 Lê Duẩn,tthoa@example.com,0987123456,Đang học
+SV009,Phạm Văn Đức,10/07/2002,Nam,Khoa Tiếng Nhật,K20,Chất lượng cao,321 Trần Hưng Đạo,pvd@example.com,0918123456,Đã tốt nghiệp
+SV010,Lê Thị Mai,28/11/2003,Nữ,Khoa Tiếng Pháp,K21,Chuẩn,654 Lý Thường Kiệt,ltmai@example.com,0369123456,Đang học
+SV011,Hoàng Văn An,05/03/2004,Nam,Khoa Báo chí,K22,Chất lượng cao,987 Cách Mạng Tháng Tám,hvan@example.com,0977123456,Đang học
+SV012,Đinh Thị Lan,12/08/2002,Nữ,Khoa Tiếng Pháp,K20,Chuẩn,246 Nguyễn Đình Chiểu,dtlan@example.com,0933123456,Đã chuyển trường
+SV013,Vũ Văn Bình,18/06/2003,Nam,Khoa Tiếng Anh thương mại,K21,Chất lượng cao,579 Võ Văn Tần,vvbinh@example.com,0944123456,Đang học
