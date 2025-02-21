@@ -50,5 +50,18 @@
         "email": "lewikhue@gmail.com",
         "sdt": "0987654345",
         "tinh_trang": "Tạm dừng học"
+    },
+    {
+        "mssv": "SV006",
+        "ho_ten": "Tô Phúc Thịnh",
+        "ngay_sinh": "13/02/2004",
+        "gioi_tinh": "Nam",
+        "khoa": "Khoa Luật",
+        "khoa_hoc": "K23",
+        "chuong_trinh": "Chuẩn",
+        "dia_chi": "301 Lê Lợi",
+        "email": "ttphucthinh@gmail.com",
+        "sdt": "0123456789",
+        "tinh_trang": "Đang học"
     }
 ]

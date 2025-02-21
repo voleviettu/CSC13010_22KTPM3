@@ -69,13 +69,30 @@ class SinhVienService:
     print("Không tìm thấy sinh viên có MSSV", mssv_can_cap_nhat)
 
   def tim_kiem_sinh_vien(self):
-    lua_chon = input("Tìm kiếm theo (1: Họ tên, 2: MSSV): ")
+    print("Chọn tiêu chí tìm kiếm:")
+    print("1: Tìm theo Họ tên")
+    print("2: Tìm theo MSSV")
+    print("3: Tìm theo Khoa")
+    print("4: Tìm theo Khoa và Họ tên")
+
+    lua_chon = input("Nhập lựa chọn của bạn: ")
+
     if lua_chon == '1':
       ten_can_tim = input("Nhập họ tên cần tìm: ")
       ket_qua = [sv for sv in self.danh_sach_sinh_vien if ten_can_tim.lower() in sv.ho_ten.lower()]
     elif lua_chon == '2':
       mssv_can_tim = input("Nhập MSSV cần tìm: ")
       ket_qua = [sv for sv in self.danh_sach_sinh_vien if sv.mssv == mssv_can_tim]
+    elif lua_chon == '3':
+      ten_khoa_can_tim = input("Nhập tên khoa cần tìm: ")
+      ket_qua = [sv for sv in self.danh_sach_sinh_vien if sv.khoa.lower() == ten_khoa_can_tim.lower()]
+    elif lua_chon == '4':
+      ten_khoa_can_tim = input("Nhập tên khoa cần tìm: ")
+      ten_can_tim = input("Nhập họ tên cần tìm: ")
+      ket_qua = [
+        sv for sv in self.danh_sach_sinh_vien
+        if sv.khoa.lower() == ten_khoa_can_tim.lower() and ten_can_tim.lower() in sv.ho_ten.lower()
+      ]
     else:
       print("Lựa chọn không hợp lệ.")
       return
@@ -83,7 +100,7 @@ class SinhVienService:
     if ket_qua:
       print("\nKết quả tìm kiếm:")
       for sv in ket_qua:
-        print(sv)
+        print(sv) 
     else:
       print("Không tìm thấy sinh viên nào.")
 

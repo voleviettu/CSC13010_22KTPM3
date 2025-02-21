@@ -1,3 +1,5 @@
+import json
+
 class SinhVien:
   def __init__(self, mssv, ho_ten, ngay_sinh, gioi_tinh, khoa, khoa_hoc, chuong_trinh, dia_chi, email, sdt, tinh_trang):
     self.mssv = mssv
@@ -13,8 +15,8 @@ class SinhVien:
     self.tinh_trang = tinh_trang
 
   def __str__(self):
-    return f"MSSV: {self.mssv}, Họ tên: {self.ho_ten}, Ngày sinh: {self.ngay_sinh}, Giới tính: {self.gioi_tinh}, Khoa: {self.khoa}, Khóa: {self.khoa_hoc}, Chương trình: {self.chuong_trinh}, Địa chỉ: {self.dia_chi}, Email: {self.email}, SĐT: {self.sdt}, Tình trạng: {self.tinh_trang}"
-
+    return json.dumps(self.to_dict(), ensure_ascii=False, indent=4)
+  
   def to_dict(self):
     return {
       "mssv": self.mssv,
