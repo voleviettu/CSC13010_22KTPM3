@@ -1,4 +1,5 @@
 import json
+import logging
 import pandas as pd
 from models.sinhvien import SinhVien
 from utils.validation import kiem_tra_email, kiem_tra_sdt, kiem_tra_ngay_sinh
@@ -7,6 +8,9 @@ from services.khoa_service import KhoaService
 from services.chuongtrinh_service import ChuongTrinhService
 from services.tinhtrang_service import TinhTrangService
 
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', handlers=[
+    logging.FileHandler("app.log", encoding="utf-8"),
+])
 
 class SinhVienService:
     def __init__(
@@ -24,6 +28,7 @@ class SinhVienService:
         self.danh_sach_chuong_trinh = self.chuong_trinh_service.danh_sach_chuong_trinh
         self.tinh_trang_service = TinhTrangService(tinh_trang_file)
         self.danh_sach_tinh_trang = self.tinh_trang_service.danh_sach_tinh_trang
+        logging.info(f"Đã tải dữ liệu sinh viên từ {sinhvien_data_file}")
 
     def them_sinh_vien(self):
         print("\nThêm sinh viên mới:")
@@ -54,6 +59,7 @@ class SinhVienService:
         )
         self.danh_sach_sinh_vien.append(sinh_vien_moi)
         self.save_data()
+        logging.info(f"Đã thêm sinh viên '{ho_ten}' thành công.")
         print("Thêm sinh viên thành công!")
 
     def xoa_sinh_vien(self):
@@ -62,8 +68,10 @@ class SinhVienService:
             if sv.mssv == mssv_can_xoa:
                 del self.danh_sach_sinh_vien[i]
                 self.save_data()
+                logging.info(f"Đã xóa sinh viên có MSSV {mssv_can_xoa}")
                 print("Đã xóa sinh viên có MSSV", mssv_can_xoa)
                 return
+        logging.warning(f"Không tìm thấy sinh viên có MSSV {mssv_can_xoa}")
         print("Không tìm thấy sinh viên có MSSV", mssv_can_xoa)
 
     def cap_nhat_sinh_vien(self):
@@ -83,9 +91,11 @@ class SinhVienService:
                 sv.tinh_trang = self._nhap_tinh_trang(sv.tinh_trang)
 
                 self.save_data()
+                logging.info(f"Đã cập nhật thông tin sinh viên có MSSV {mssv_can_cap_nhat}")
                 print("Cập nhật thông tin thành công!")
                 return
 
+        logging.warning(f"Không tìm thấy sinh viên có MSSV {mssv_can_cap_nhat}")
         print("Không tìm thấy sinh viên có MSSV", mssv_can_cap_nhat)
 
     def tim_kiem_sinh_vien(self):
@@ -124,32 +134,39 @@ class SinhVienService:
                 and ten_can_tim.lower() in sv.ho_ten.lower()
             ]
         else:
+            logging.warning("Lựa chọn không hợp lệ.")
             print("Lựa chọn không hợp lệ.")
             return
 
         if ket_qua:
+            logging.info(f"Tìm thấy {len(ket_qua)} sinh viên.")
             print("\nKết quả tìm kiếm:")
             for sv in ket_qua:
                 print(sv)
         else:
+            logging.info("Không tìm thấy sinh viên nào.")
             print("Không tìm thấy sinh viên nào.")
 
     def hien_thi_danh_sach(self):
         print("\nDanh sách sinh viên:")
         if not self.danh_sach_sinh_vien:
             print("[]")
+            logging.info("Danh sách sinh viên trống.")
             return
         data = [sv.to_dict() for sv in self.danh_sach_sinh_vien]
         print(json.dumps(data, ensure_ascii=False, indent=4))
+        logging.info("Đã hiển thị danh sách sinh viên.")
 
-    def save_data(self):
-        save_sinhvien_data(self.danh_sach_sinh_vien, self.sinhvien_data_file)
+    def save_data(self, filename=None, file_type=None):
+        save_sinhvien_data(self.danh_sach_sinh_vien, filename or self.sinhvien_data_file, file_type or "json")
+        logging.info(f"Đã lưu dữ liệu sinh viên vào {filename or self.sinhvien_data_file}")
 
     def _nhap_mssv(self):
         while True:
             mssv = input("Nhập MSSV: ")
             if not any(sv.mssv == mssv for sv in self.danh_sach_sinh_vien):
                 return mssv
+            logging.warning(f"MSSV {mssv} đã tồn tại.")
             print("MSSV đã tồn tại. Vui lòng nhập lại.")
 
     def _nhap_ngay_sinh(self, default_value=""):
@@ -160,6 +177,7 @@ class SinhVienService:
             )
             if kiem_tra_ngay_sinh(ngay_sinh):
                 return ngay_sinh
+            logging.warning("Ngày sinh không hợp lệ.")
             print(
                 "Ngày sinh không hợp lệ. Vui lòng nhập lại theo định dạng dd/mm/yyyy."
             )
@@ -170,6 +188,7 @@ class SinhVienService:
             khoa = input(f"Nhập khoa ({default_value}): ") or default_value
             if khoa in self.khoa_service.danh_sach_khoa or khoa == "":
                 return khoa
+            logging.warning("Khoa không hợp lệ.")
             print("Khoa không hợp lệ. Vui lòng chọn một trong các khoa đã liệt kê.")
 
     def _nhap_chuong_trinh(self, default_value=""):
@@ -183,6 +202,7 @@ class SinhVienService:
                 or chuong_trinh == ""
             ):
                 return chuong_trinh
+            logging.warning("Chương trình không hợp lệ.")
             print(
                 "Chương trình không hợp lệ.  Vui lòng chọn một trong các chương trình đã liệt kê"
             )
@@ -192,6 +212,7 @@ class SinhVienService:
             email = input(f"Nhập email ({default_value}): ") or default_value
             if email == "" or kiem_tra_email(email):
                 return email
+            logging.warning("Email không hợp lệ.")
             print("Email không hợp lệ. Vui lòng nhập lại.")
 
     def _nhap_sdt(self, default_value=""):
@@ -199,6 +220,7 @@ class SinhVienService:
             sdt = input(f"Nhập số điện thoại ({default_value}): ") or default_value
             if sdt == "" or kiem_tra_sdt(sdt):
                 return sdt
+            logging.warning("Số điện thoại không hợp lệ.")
             print("Số điện thoại không hợp lệ. Vui lòng nhập lại.")
 
     def _nhap_tinh_trang(self, default_value=""):
@@ -210,24 +232,25 @@ class SinhVienService:
                 or tinh_trang == ""
             ):
                 return tinh_trang
+            logging.warning("Tình trạng không hợp lệ.")
             print(
                 "Tình trạng không hợp lệ. Vui lòng chọn một trong các tình trạng đã liệt kê."
             )
 
     def import_data(self, file_type):
-            filename = input(f"Nhập tên file {file_type} để import (bao gồm phần mở rộng .csv hoặc .json): ")
-            try:
-                new_data = load_sinhvien_data(filename, file_type)
-                self.danh_sach_sinh_vien.extend(new_data)  # Thêm vào danh sách hiện tại
-                self.save_data()
-                print(f"Import dữ liệu từ file {file_type} thành công.")
-            except Exception as e:
-                print(f"Lỗi khi import: {e}")
+        filename = input(f"Nhập tên file {file_type} để import (bao gồm phần mở rộng .csv hoặc .json): ")
+        try:
+            new_data = load_sinhvien_data(filename, file_type)
+            self.danh_sach_sinh_vien.extend(new_data)  # Thêm vào danh sách hiện tại
+            self.save_data()
+            logging.info(f"Import dữ liệu từ file {file_type} thành công.")
+            print(f"Import dữ liệu từ file {file_type} thành công.")
+        except Exception as e:
+            logging.error(f"Lỗi khi import: {e}")
+            print(f"Lỗi khi import: {e}")
 
     def export_data(self, file_type):
         filename = input("Nhập tên file để export (bao gồm phần mở rộng .csv hoặc .json): ")
         self.save_data(filename, file_type)  # Sử dụng hàm save_data có sẵn
+        logging.info(f"Export thành công ra file {filename}.")
         print(f"Export thành công ra file {filename}.")
-
-    def save_data(self, filename = None, file_type = None):
-        save_sinhvien_data(self.danh_sach_sinh_vien, filename or self.sinhvien_data_file, file_type or "json")

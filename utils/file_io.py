@@ -1,52 +1,60 @@
 import json
 import csv
-from models.sinhvien import SinhVien  
+import logging
+from models.sinhvien import SinhVien
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', handlers=[
+    logging.FileHandler("app.log", encoding="utf-8"),
+])
 
 def load_json_file(filename):
     try:
         with open(filename, "r", encoding="utf-8") as file:
+            logging.info(f"Đang tải file JSON: {filename}")
             return json.load(file)
-    except (FileNotFoundError, json.JSONDecodeError):
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        logging.error(f"Lỗi khi tải file JSON {filename}: {e}")
         return []
 
-
 def save_json_file(data, filename):
-    with open(filename, "w", encoding="utf-8") as file:
-        json.dump(data, file, ensure_ascii=False, indent=4)
-
+    try:
+        with open(filename, "w", encoding="utf-8") as file:
+            json.dump(data, file, ensure_ascii=False, indent=4)
+            logging.info(f"Đã lưu file JSON: {filename}")
+    except Exception as e:
+        logging.error(f"Lỗi khi lưu file JSON {filename}: {e}")
 
 def load_csv_file(filename):
     try:
         with open(filename, mode="r", newline="", encoding="utf-8") as file:
+            logging.info(f"Đang tải file CSV: {filename}")
             reader = csv.DictReader(file)
             data = []
             for row in reader:
                 data.append(row)
             return data
-    except FileNotFoundError:
+    except FileNotFoundError as e:
+        logging.error(f"Không tìm thấy file: {filename}")
         return []
     except Exception as e:
-        print(f"Lỗi khi đọc file CSV: {e}")
+        logging.error(f"Lỗi khi đọc file CSV {filename}: {e}")
         return []
-
 
 def save_csv_file(data, filename):
     if not data:
-        print("Không có dữ liệu để xuất.")
+        logging.warning("Không có dữ liệu để xuất.")
         return
 
     try:
         with open(filename, mode="w", newline="", encoding="utf-8") as file:
-            # Lấy header từ dictionary đầu tiên trong danh sách
             fieldnames = list(data[0].keys())
             writer = csv.DictWriter(file, fieldnames=fieldnames)
-
-            writer.writeheader()  # Ghi header
+            writer.writeheader()
             for row in data:
                 writer.writerow(row)
+            logging.info(f"Đã lưu file CSV: {filename}")
     except Exception as e:
-        print(f"Lỗi khi ghi file CSV: {e}")
-
+        logging.error(f"Lỗi khi lưu file CSV {filename}: {e}")
 
 def load_sinhvien_data(filename="data/sinhvien.json", file_type="json"):
     try:
@@ -55,18 +63,16 @@ def load_sinhvien_data(filename="data/sinhvien.json", file_type="json"):
         elif file_type == "csv":
             data = load_csv_file(filename)
         else:
-            print("Loại file không được hỗ trợ.")
+            logging.error("Loại file không được hỗ trợ.")
             return []
 
+        logging.info(f"Đã tải dữ liệu sinh viên từ {filename}")
         return [SinhVien(**item) for item in data]
     except Exception as e:
-        print(f"Lỗi khi load dữ liệu sinh viên: {e}")
+        logging.error(f"Lỗi khi tải dữ liệu sinh viên: {e}")
         return []
 
-
-def save_sinhvien_data(
-    danh_sach_sinh_vien, filename="data/sinhvien.json", file_type="json"
-):
+def save_sinhvien_data(danh_sach_sinh_vien, filename="data/sinhvien.json", file_type="json"):
     data = [sv.to_dict() for sv in danh_sach_sinh_vien]
     try:
         if file_type == "json":
@@ -74,6 +80,6 @@ def save_sinhvien_data(
         elif file_type == "csv":
             save_csv_file(data, filename)
         else:
-            print("Loại file không được hỗ trợ.")
+            logging.error("Loại file không được hỗ trợ.")
     except Exception as e:
-        print(f"Lỗi khi lưu dữ liệu sinh viên {e}")
+        logging.error(f"Lỗi khi lưu dữ liệu sinh viên: {e}")

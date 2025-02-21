@@ -2,6 +2,12 @@ from services.sinhvien_service import SinhVienService
 from services.khoa_service import KhoaService
 from services.chuongtrinh_service import ChuongTrinhService
 from services.tinhtrang_service import TinhTrangService
+import logging
+
+# Cấu hình logging để ghi log ra file
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', handlers=[
+    logging.FileHandler("app.log", encoding="utf-8"),
+])
 
 def menu_import_export(service):
     while True:
@@ -25,6 +31,7 @@ def menu_import_export(service):
         elif lua_chon == '0':
             break
         else:
+            logging.warning("Lựa chọn không hợp lệ. Vui lòng thử lại.")
             print("Lựa chọn không hợp lệ. Vui lòng thử lại.")
 
 def menu_sinh_vien(service):
@@ -55,6 +62,7 @@ def menu_sinh_vien(service):
         elif lua_chon == '0':
             break
         else:
+            logging.warning("Lựa chọn không hợp lệ. Vui lòng thử lại.")
             print("Lựa chọn không hợp lệ. Vui lòng thử lại.")
 
 def menu_khoa(service):
@@ -76,7 +84,9 @@ def menu_khoa(service):
         elif lua_chon == '0':
             break
         else:
+            logging.warning("Lựa chọn không hợp lệ.")
             print("Lựa chọn không hợp lệ.")
+
 def menu_chuong_trinh(service):
     while True:
         print("\n----- QUẢN LÝ CHƯƠNG TRÌNH ĐÀO TẠO -----")
@@ -90,12 +100,13 @@ def menu_chuong_trinh(service):
         if lua_chon == '1':
             service.them_chuong_trinh()
         elif lua_chon == '2':
-          service.sua_chuong_trinh()
+            service.sua_chuong_trinh()
         elif lua_chon == '3':
             service.hien_thi_danh_sach_chuong_trinh()
         elif lua_chon == '0':
             break
         else:
+            logging.warning("Lựa chọn không hợp lệ.")
             print("Lựa chọn không hợp lệ.")
 
 def menu_tinh_trang(service):
@@ -116,6 +127,7 @@ def menu_tinh_trang(service):
         elif lua_chon == '0':
             break
         else:
+            logging.warning("Lựa chọn không hợp lệ.")
             print("Lựa chọn không hợp lệ")
 
 def main():
@@ -143,9 +155,11 @@ def main():
         elif lua_chon == '4':
             menu_tinh_trang(tinh_trang_service)
         elif lua_chon == '0':
+            logging.info("Thoát chương trình.")
             print("Thoát chương trình.")
             break
         else:
+            logging.warning("Lựa chọn không hợp lệ. Vui lòng thử lại.")
             print("Lựa chọn không hợp lệ. Vui lòng thử lại.")
 
 if __name__ == "__main__":
