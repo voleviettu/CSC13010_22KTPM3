@@ -2,11 +2,12 @@ import json
 import logging
 import pandas as pd
 from models.sinhvien import SinhVien
-from utils.validation import kiem_tra_email, kiem_tra_sdt, kiem_tra_ngay_sinh
+from utils.validation import kiem_tra_email, kiem_tra_sdt, kiem_tra_ngay_sinh, kiem_tra_trang_thai
 from utils.file_io import load_sinhvien_data, save_sinhvien_data, load_json_file
 from services.khoa_service import KhoaService
 from services.chuongtrinh_service import ChuongTrinhService
 from services.tinhtrang_service import TinhTrangService
+
 
 logging.basicConfig(
     level=logging.INFO,
@@ -139,12 +140,10 @@ class SinhVienService:
                 sv.sdt = new_sdt
                 
                 new_tinh_trang = updated_data.get("tinh_trang", sv.tinh_trang)
-                if new_tinh_trang != sv.tinh_trang:
-                    if sv.tinh_trang in TAT_CA_TINH_TRANG_HOP_LE and new_tinh_trang in TAT_CA_TINH_TRANG_HOP_LE[sv.tinh_trang]:
-                        sv.tinh_trang = new_tinh_trang
-                    else:
-                        logging.warning(f"Không thể thay đổi tình trạng từ {sv.tinh_trang} sang {new_tinh_trang}.")
-                        return f"Không thể thay đổi tình trạng từ {sv.tinh_trang} sang {new_tinh_trang}."
+                if new_tinh_trang and not kiem_tra_trang_thai(sv.tinh_trang, new_tinh_trang):
+                    logging.warning(f"Không thể thay đổi tình trạng từ {sv.tinh_trang} sang {new_tinh_trang}.")
+                    return f"Không thể thay đổi tình trạng từ {sv.tinh_trang} sang {new_tinh_trang}."
+                sv.tinh_trang = new_tinh_trang
                 
                 self.save_data()
                 logging.info(f"Đã cập nhật thông tin sinh viên có MSSV {mssv_can_cap_nhat}")
