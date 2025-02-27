@@ -1,9 +1,9 @@
 [
     {
         "mssv": "SV001",
-        "ho_ten": "Nguyễn Ngọc Phương Uyên",
-        "ngay_sinh": "07/01/2003",
-        "gioi_tinh": "Nữ",
+        "ho_ten": "Nguyễn Thị Móng",
+        "ngay_sinh": "27/02/2025",
+        "gioi_tinh": "Khác",
         "khoa": "Khoa Luật",
         "khoa_hoc": "K21",
         "chuong_trinh": "Chất lượng cao",
@@ -52,16 +52,16 @@
         "tinh_trang": "Tạm dừng học"
     },
     {
-        "mssv": "SV006",
-        "ho_ten": "Tô Phúc Thịnh",
-        "ngay_sinh": "13/02/2004",
+        "mssv": "SV010",
+        "ho_ten": "Lương Khải Nguyên",
+        "ngay_sinh": "27/02/2025",
         "gioi_tinh": "Nam",
         "khoa": "Khoa Luật",
-        "khoa_hoc": "K23",
-        "chuong_trinh": "Chuẩn",
-        "dia_chi": "301 Lê Lợi",
-        "email": "ttphucthinh@gmail.com",
-        "sdt": "0123456789",
+        "khoa_hoc": "K19",
+        "chuong_trinh": "Chất lượng cao",
+        "dia_chi": "456 Hoàng Sa",
+        "email": "nkluong@student.university.edu.vn",
+        "sdt": "0987789987",
         "tinh_trang": "Đang học"
     }
 ]
