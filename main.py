@@ -137,8 +137,8 @@ def menu_sinh_vien(service):
         mssv = st.text_input("Nhập MSSV của sinh viên cần cập nhật")
         ho_ten = st.text_input("Họ và tên mới")
         ngay_sinh = st.date_input("Ngày sinh mới", value=datetime.date.today(), min_value=datetime.date(1900, 1, 1), max_value=datetime.date.today())
-        gioi_tinh = st.selectbox("Giới tính mới", ["Nam", "Nữ", "Khác"])
-        khoa = st.selectbox("Khoa mới", [
+        gioi_tinh = st.selectbox("Giới tính mới", ["Trống", "Nam", "Nữ", "Khác"])
+        khoa = st.selectbox("Khoa mới", ["Trống",
                                         "Khoa Luật",
                                         "Khoa Tiếng Anh thương mại",
                                         "Khoa Tiếng Nhật",
@@ -146,7 +146,7 @@ def menu_sinh_vien(service):
                                         "Khoa Báo Chí"
                                     ])
         khoa_hoc = st.text_input("Khóa mới")
-        chuong_trinh = st.selectbox("Chương trình đào tạo mới", [
+        chuong_trinh = st.selectbox("Chương trình đào tạo mới", ["Trống",
                                                                 "Chất lượng cao",
                                                                 "Chuẩn",
                                                                 "Tiên tiến",
@@ -155,7 +155,7 @@ def menu_sinh_vien(service):
         dia_chi = st.text_input("Địa chỉ mới")
         email = st.text_input("Email mới")
         sdt = st.text_input("Số điện thoại mới")
-        tinh_trang = st.selectbox("Tình trạng mới", [
+        tinh_trang = st.selectbox("Tình trạng mới", ["Trống",
                                                     "Đang học",
                                                     "Đã tốt nghiệp",
                                                     "Đã thôi học",
@@ -172,11 +172,11 @@ def menu_sinh_vien(service):
                 updated_data["ngay_sinh"] = ngay_sinh.strftime("%d/%m/%Y")
             if gioi_tinh:
                 updated_data["gioi_tinh"] = gioi_tinh
-            if khoa:
+            if khoa and khoa != "Trống":
                 updated_data["khoa"] = khoa
             if khoa_hoc:
                 updated_data["khoa_hoc"] = khoa_hoc
-            if chuong_trinh:
+            if chuong_trinh and chuong_trinh != "Trống":
                 updated_data["chuong_trinh"] = chuong_trinh
             if dia_chi:
                 updated_data["dia_chi"] = dia_chi
@@ -184,7 +184,7 @@ def menu_sinh_vien(service):
                 updated_data["email"] = email
             if sdt:
                 updated_data["sdt"] = sdt
-            if tinh_trang:
+            if tinh_trang and tinh_trang != "Trống":
                 updated_data["tinh_trang"] = tinh_trang
 
             result = service.cap_nhat_sinh_vien(mssv, updated_data)
