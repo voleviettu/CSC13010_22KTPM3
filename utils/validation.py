@@ -46,7 +46,7 @@ def kiem_tra_ngay_sinh(ngay_sinh):
     
 def kiem_tra_trang_thai(old_status: str, new_status: str) -> bool:
     allowed_transition = [s for s in VALID_STATUS.get(old_status, [])]
-
+    print(allowed_transition)
     if new_status in allowed_transition:
         logging.info(f'Tình trạng hợp lệ: {new_status}')
         return True

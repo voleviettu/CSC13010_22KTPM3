@@ -51,55 +51,79 @@ Chương trình được tổ chức thành các thành phần chính như sau:
 
 Hệ thống sử dụng cơ chế logging để ghi lại các hoạt động và lỗi xảy ra trong quá trình chạy chương trình. Các log được ghi vào file `app.log`.
 
-## Hướng dẫn cài đặt và chạy chương trình
+# Hướng Dẫn Cài Đặt và Sử Dụng Chương Trình Quản Lý Sinh Viên
 
-1.  **Tải file mã nguồn:** Tải file mã nguồn Python (`.py`) về máy tính. (Giả sử tên file là `main.py`).
+## Cài Đặt Streamlit
 
-2.  **Mở Terminal/Command Prompt:** Mở cửa sổ dòng lệnh (Terminal trên Linux/macOS hoặc Command Prompt trên Windows).
+1. **Cài đặt Python**: Đảm bảo rằng bạn đã cài đặt Python trên máy tính của mình. Bạn có thể tải Python từ [python.org](https://www.python.org/downloads/).
 
-3.  **Di chuyển đến thư mục chứa file mã nguồn:** Sử dụng lệnh `cd` để di chuyển đến thư mục chứa file `main.py`.
+2. **Cài đặt Streamlit**: Mở Terminal (Linux/macOS) hoặc Command Prompt (Windows) và chạy lệnh sau để cài đặt Streamlit:
+    ```sh
+    pip install streamlit
+    ```
 
-    ```bash
+## Chạy Chương Trình
+
+1. **Tải file mã nguồn**: Tải cả project về máy tính của bạn.
+
+2. **Mở Terminal/Command Prompt**: Mở cửa sổ dòng lệnh (Terminal trên Linux/macOS hoặc Command Prompt trên Windows).
+
+3. **Di chuyển đến thư mục chứa file mã nguồn**: Sử dụng lệnh `cd` để di chuyển đến thư mục chứa file [main.py]:
+    ```sh
     cd /duong/dan/den/thu/muc
     ```
 
-4.  **Thực thi chương trình:** Sử dụng lệnh `python` để chạy file mã nguồn:
-
-    ```bash
-    python main.py
+4. **Chạy chương trình**: Sử dụng lệnh `streamlit run` để chạy file [main.py](http://_vscodecontentref_/4):
+    ```sh
+    streamlit run main.py
     ```
 
-5.  **Thao tác với chương trình:** Chương trình sẽ hiển thị một menu. Người dùng nhập các số tương ứng với các chức năng để thực hiện các thao tác thêm, xóa, cập nhật, tìm kiếm, và hiển thị danh sách sinh viên.
+5. **Mở trình duyệt**: Chương trình sẽ tự động mở trình duyệt web và hiển thị giao diện quản lý sinh viên.
 
-## Hướng dẫn sử dụng hệ thống
+## Sử Dụng Chương Trình
 
-### Menu chính
+### Menu Chính
 
 Khi chạy chương trình, bạn sẽ thấy menu chính với các lựa chọn sau:
 
------ CHỌN MỤC QUẢN LÝ -----
+- **QUẢN LÝ SINH VIÊN**: Quản lý thông tin sinh viên.
+- **QUẢN LÝ KHOA**: Quản lý thông tin khoa.
+- **QUẢN LÝ CHƯƠNG TRÌNH ĐÀO TẠO**: Quản lý thông tin chương trình đào tạo.
+- **QUẢN LÝ TÌNH TRẠNG**: Quản lý thông tin tình trạng sinh viên.
+- **THÔNG TIN PHIÊN BẢN**: Hiển thị thông tin phiên bản của chương trình.
 
-1. Quản lý sinh viên
-2. Quản lý khoa
-3. Quản lý chương trình đào tạo
-4. Quản lý tình trạng
-5. Hiển thị thông tin phiên bản
-6. Thoát
+### Quản Lý Sinh Viên
 
-Nhập số tương ứng với lựa chọn của bạn và nhấn Enter.
+1. **Thêm sinh viên**: Nhập thông tin sinh viên mới và nhấn nút "Thêm sinh viên".
+2. **Xóa sinh viên**: Nhập MSSV của sinh viên cần xóa và nhấn nút "Xóa".
+3. **Cập nhật thông tin sinh viên**: Nhập MSSV của sinh viên cần cập nhật, sau đó nhập thông tin mới và nhấn nút "Cập nhật".
+4. **Tìm kiếm sinh viên**: Chọn tiêu chí tìm kiếm, nhập giá trị tìm kiếm và nhấn nút "Tìm kiếm".
+5. **Hiển thị danh sách sinh viên**: Hiển thị danh sách tất cả sinh viên hiện có.
+6. **Import/Export dữ liệu**: Import hoặc export dữ liệu sinh viên từ/ra file CSV hoặc JSON.
 
-- Khi chọn "1. Quản lý sinh viên", bạn sẽ thấy menu quản lý sinh viên.
-- Khi chọn "2. Quản lý khoa", bạn sẽ thấy menu quản lý khoa.
-- Khi chọn "3. Quản lý chương trình đào tạo", bạn sẽ thấy menu quản lý chương trình đào tạo.
-- Khi chọn "4. Quản lý tình trạng", bạn sẽ thấy menu quản lý tình trạng.
+### Quản Lý Khoa
 
-### Hiển thị thông tin phiên bản
+1. **Thêm khoa**: Nhập tên khoa mới và nhấn nút "Thêm khoa".
+2. **Sửa khoa**: Chọn khoa cần sửa, nhập tên khoa mới và nhấn nút "Sửa khoa".
+3. **Hiển thị danh sách khoa**: Hiển thị danh sách tất cả các khoa hiện có.
 
-Khi chọn "5. Hiển thị thông tin phiên bản", chương trình sẽ hiển thị thông tin phiên bản từ file [version.txt].
+### Quản Lý Chương Trình Đào Tạo
 
-### Thoát chương trình
+1. **Thêm chương trình đào tạo**: Nhập tên chương trình đào tạo mới và nhấn nút "Thêm chương trình đào tạo".
+2. **Sửa chương trình đào tạo**: Chọn chương trình cần sửa, nhập tên chương trình mới và nhấn nút "Sửa chương trình đào tạo".
+3. **Hiển thị danh sách chương trình đào tạo**: Hiển thị danh sách tất cả các chương trình đào tạo hiện có.
 
-Khi chọn "0. Thoát", chương trình sẽ kết thúc và thoát.
+### Quản Lý Tình Trạng
+
+1. **Thêm tình trạng**: Nhập tên tình trạng mới và nhấn nút "Thêm tình trạng".
+2. **Sửa tình trạng**: Chọn tình trạng cần sửa, nhập tên tình trạng mới và nhấn nút "Sửa tình trạng".
+3. **Hiển thị danh sách tình trạng**: Hiển thị danh sách tất cả các tình trạng hiện có.
+
+### Thông Tin Phiên Bản
+
+Hiển thị thông tin phiên bản của chương trình từ file [version.txt](http://_vscodecontentref_/5).
+
+---
 
 ## Test tính năng import dữ liệu
 
@@ -119,4 +143,4 @@ Khi chọn "0. Thoát", chương trình sẽ kết thúc và thoát.
 
 ## Giao diện
 
-- Xem giao diện console trong folder images.
+- Xem giao diện trong folder images.

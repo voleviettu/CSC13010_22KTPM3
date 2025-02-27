@@ -1,8 +1,8 @@
 [
     {
         "mssv": "SV001",
-        "ho_ten": "Nguyễn Thị Móng",
-        "ngay_sinh": "27/02/2025",
+        "ho_ten": "Võ Lê Việt Tú",
+        "ngay_sinh": "27/02/2005",
         "gioi_tinh": "Khác",
         "khoa": "Khoa Luật",
         "khoa_hoc": "K21",
@@ -41,7 +41,7 @@
     {
         "mssv": "SV010",
         "ho_ten": "Lương Khải Nguyên",
-        "ngay_sinh": "27/02/2025",
+        "ngay_sinh": "27/02/2003",
         "gioi_tinh": "Nam",
         "khoa": "Khoa Luật",
         "khoa_hoc": "K19",
