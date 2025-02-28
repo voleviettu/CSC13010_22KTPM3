@@ -56,12 +56,12 @@ def save_csv_file(data, filename):
     except Exception as e:
         logging.error(f"Lỗi khi lưu file CSV {filename}: {e}")
 
-def load_sinhvien_data(filename="data/sinhvien.json", file_type="json"):
+def load_sinhvien_data(filename="data/sinhvien", file_type="json"):
     try:
         if file_type == "json":
-            data = load_json_file(filename)
+            data = load_json_file(filename+'.json')
         elif file_type == "csv":
-            data = load_csv_file(filename)
+            data = load_csv_file(filename+'.csv')
         else:
             logging.error("Loại file không được hỗ trợ.")
             return []
@@ -72,13 +72,13 @@ def load_sinhvien_data(filename="data/sinhvien.json", file_type="json"):
         logging.error(f"Lỗi khi tải dữ liệu sinh viên: {e}")
         return []
 
-def save_sinhvien_data(danh_sach_sinh_vien, filename="data/sinhvien.json", file_type="json"):
+def save_sinhvien_data(danh_sach_sinh_vien, filename="data/sinhvien", file_type="json"):
     data = [sv.to_dict() for sv in danh_sach_sinh_vien]
     try:
         if file_type == "json":
-            save_json_file(data, filename)
+            save_json_file(data, filename+'.json')
         elif file_type == "csv":
-            save_csv_file(data, filename)
+            save_csv_file(data, filename+'.csv')
         else:
             logging.error("Loại file không được hỗ trợ.")
     except Exception as e:

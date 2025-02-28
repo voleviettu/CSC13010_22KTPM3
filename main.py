@@ -26,7 +26,6 @@ def menu_import_export(service):
         ("Import từ file CSV", "Import từ file JSON", "Export ra file CSV", "Export ra file JSON")
     )
     
-    # Dựa vào lựa chọn, hiển thị ô nhập tên file
     if option.startswith("Import"):
         filename = st.text_input("Nhập đường dẫn file cần import (bao gồm phần mở rộng)")
     else:
@@ -93,12 +92,13 @@ def menu_sinh_vien(service):
                                                     "Đã tốt nghiệp",
                                                     "Đã thôi học",
                                                     "Tạm dừng học",
-                                                    "Bảo lưu kết quả"
+                                                    "Bảo lưu",
+                                                    "Đình chỉ"
                                                 ])
 
         if st.button("Thêm sinh viên"):
             # Chuyển đổi đối tượng date thành chuỗi theo định dạng dd/mm/yyyy
-            ngay_sinh_str = ngay_sinh.strftime("%d/%m/%Y")
+            ngay_sinh_str = ngay_sinh.strftime("%Y/%m/%d")
             # Tạo dictionary chứa dữ liệu sinh viên
             student_data = {
                 "mssv": mssv,
@@ -135,63 +135,77 @@ def menu_sinh_vien(service):
         st.subheader("Cập nhật sinh viên")
         st.info("Nhập thông tin mới cho các trường cần cập nhật. Để trống nếu không muốn thay đổi giá trị.")
         mssv = st.text_input("Nhập MSSV của sinh viên cần cập nhật")
-        ho_ten = st.text_input("Họ và tên mới")
-        ngay_sinh = st.date_input("Ngày sinh mới", value=datetime.date.today(), min_value=datetime.date(1900, 1, 1), max_value=datetime.date.today())
-        gioi_tinh = st.selectbox("Giới tính mới", ["Trống", "Nam", "Nữ", "Khác"])
-        khoa = st.selectbox("Khoa mới", ["Trống",
-                                        "Khoa Luật",
-                                        "Khoa Tiếng Anh thương mại",
-                                        "Khoa Tiếng Nhật",
-                                        "Khoa Tiếng Pháp",
-                                        "Khoa Báo Chí"
-                                    ])
-        khoa_hoc = st.text_input("Khóa mới")
-        chuong_trinh = st.selectbox("Chương trình đào tạo mới", ["Trống",
-                                                                "Chất lượng cao",
-                                                                "Chuẩn",
-                                                                "Tiên tiến",
-                                                                "Tăng cường tiếng Anh"
-                                                            ])
-        dia_chi = st.text_input("Địa chỉ mới")
-        email = st.text_input("Email mới")
-        sdt = st.text_input("Số điện thoại mới")
-        tinh_trang = st.selectbox("Tình trạng mới", ["Trống",
-                                                    "Đang học",
-                                                    "Đã tốt nghiệp",
-                                                    "Đã thôi học",
-                                                    "Tạm dừng học",
-                                                    "Bảo lưu kết quả"
-                                                ])
-        
-        if st.button("Cập nhật"):
-            updated_data = {}
-            if ho_ten:
-                updated_data["ho_ten"] = ho_ten
-            # Nếu người dùng thay đổi ngày sinh, chuyển đối tượng date thành chuỗi định dạng dd/mm/yyyy
-            if ngay_sinh:
-                updated_data["ngay_sinh"] = ngay_sinh.strftime("%d/%m/%Y")
-            if gioi_tinh:
-                updated_data["gioi_tinh"] = gioi_tinh
-            if khoa and khoa != "Trống":
-                updated_data["khoa"] = khoa
-            if khoa_hoc:
-                updated_data["khoa_hoc"] = khoa_hoc
-            if chuong_trinh and chuong_trinh != "Trống":
-                updated_data["chuong_trinh"] = chuong_trinh
-            if dia_chi:
-                updated_data["dia_chi"] = dia_chi
-            if email:
-                updated_data["email"] = email
-            if sdt:
-                updated_data["sdt"] = sdt
-            if tinh_trang and tinh_trang != "Trống":
-                updated_data["tinh_trang"] = tinh_trang
 
-            result = service.cap_nhat_sinh_vien(mssv, updated_data)
-            if "thành công" in result.lower():
-                st.success(result)
+        # Khi bấm "Tìm kiếm", lưu kết quả vào session_state
+        if st.button('Tìm kiếm'):
+            data = service.tim_kiem_sinh_vien(criteria='mssv', value=mssv)
+            if not data:
+                st.info("Không tìm thấy sinh viên nào.")
+                st.session_state.found_student = None
             else:
-                st.error(result)
+                st.session_state.found_student = data[0]
+
+        # Kiểm tra nếu đã có dữ liệu tìm kiếm từ session_state
+        if st.session_state.get("found_student"):
+            date_str = st.session_state.found_student['ngay_sinh']
+            date_obj = datetime.datetime.strptime(date_str, "%Y/%m/%d").date()
+
+            ho_ten = st.text_input("Họ và tên mới")
+            ngay_sinh = st.date_input("Ngày sinh mới", value=date_obj,
+                                    min_value=datetime.date(1900, 1, 1), max_value=datetime.date.today())
+            st.write("Ngày sinh đã chọn:", ngay_sinh.strftime("%Y/%m/%d"))
+            gioi_tinh = st.selectbox("Giới tính mới", ["Trống", "Nam", "Nữ", "Khác"])
+            khoa = st.selectbox("Khoa mới", ["Trống",
+                                            "Khoa Luật",
+                                            "Khoa Tiếng Anh thương mại",
+                                            "Khoa Tiếng Nhật",
+                                            "Khoa Tiếng Pháp",
+                                            "Khoa Báo Chí"])
+            khoa_hoc = st.text_input("Khóa mới")
+            chuong_trinh = st.selectbox("Chương trình đào tạo mới", ["Trống",
+                                                                    "Chất lượng cao",
+                                                                    "Chuẩn",
+                                                                    "Tiên tiến",
+                                                                    "Tăng cường tiếng Anh"])
+            dia_chi = st.text_input("Địa chỉ mới")
+            email = st.text_input("Email mới")
+            sdt = st.text_input("Số điện thoại mới")
+            tinh_trang = st.selectbox("Tình trạng mới", ["Trống",
+                                                        "Đang học",
+                                                        "Đã tốt nghiệp",
+                                                        "Đã thôi học",
+                                                        "Tạm dừng học",
+                                                        "Bảo lưu",
+                                                        "Đình chỉ"])
+
+            if st.button('Cập nhật'):
+                updated_data = {}
+                if ho_ten:
+                    updated_data["ho_ten"] = ho_ten
+                if ngay_sinh:
+                    updated_data["ngay_sinh"] = ngay_sinh.strftime("%Y/%m/%d")
+                if gioi_tinh:
+                    updated_data["gioi_tinh"] = gioi_tinh
+                if khoa and khoa != "Trống":
+                    updated_data["khoa"] = khoa
+                if khoa_hoc:
+                    updated_data["khoa_hoc"] = khoa_hoc
+                if chuong_trinh and chuong_trinh != "Trống":
+                    updated_data["chuong_trinh"] = chuong_trinh
+                if dia_chi:
+                    updated_data["dia_chi"] = dia_chi
+                if email:
+                    updated_data["email"] = email
+                if sdt:
+                    updated_data["sdt"] = sdt
+                if tinh_trang and tinh_trang != "Trống":
+                    updated_data["tinh_trang"] = tinh_trang
+
+                result = service.cap_nhat_sinh_vien(mssv, updated_data)
+                if "thành công" in result.lower():
+                    st.success(result)
+                else:
+                    st.error(result)
 
     
     elif operation == "Tìm kiếm sinh viên":
@@ -378,10 +392,9 @@ def main():
     
     st.sidebar.header("HỆ THỐNG QUẢN LÝ SINH VIÊN")
     try:
-        image = Image.open("logo.jpg")
+        image = Image.open("./images/logo.jpg")
 
-        # Scale ảnh mà không giảm chất lượng
-        new_width = 300  # Thay đổi theo nhu cầu
+        new_width = 300  
         aspect_ratio = image.height / image.width
         new_height = int(new_width * aspect_ratio)
 

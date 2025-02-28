@@ -2,9 +2,9 @@
     "VALID_EMAIL":"student.university.edu.vn",
     "VALID_MOBILE":"^(\\+84|0)(3|5|7|8|9)\\d{8}$",
     "VALID_STATUS": {
-        "Đang học": ["Đang học", "Bảo lưu kết quả", "Tốt nghiệp", "Đình chỉ"],
-        "Bảo lưu": ["Đang học", "Tốt nghiệp", "Đình chỉ"],
-        "Tốt nghiệp": ["Đình chỉ"],
-        "Đình chỉ": ["Đang học", "Bảo lưu kết quả"]
+        "Đang học": ["Đang học", "Bảo lưu", "Đã tốt nghiệp", "Đình chỉ"],
+        "Bảo lưu": ["Bảo lưu", "Đang học", "Đã tốt nghiệp", "Đình chỉ"],
+        "Đã tốt nghiệp": ["Đã tốt nghiệp", "Đình chỉ"],
+        "Đình chỉ": ["Đình chỉ", "Đang học", "Bảo lưu"]
     }
 }

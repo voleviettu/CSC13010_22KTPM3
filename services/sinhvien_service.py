@@ -18,7 +18,7 @@ logging.basicConfig(
 class SinhVienService:
     def __init__(
         self,
-        sinhvien_data_file="data/sinhvien.json",
+        sinhvien_data_file="data/sinhvien",
         khoa_file="data/khoa.json",
         tinh_trang_file="data/tinhtrang.json",
         chuong_trinh_file="data/chuongtrinh.json",
@@ -103,13 +103,6 @@ class SinhVienService:
         Cập nhật thông tin sinh viên dựa theo MSSV.
         updated_data chứa các key muốn cập nhật. Nếu key không có trong dict thì giữ nguyên.
         """
-        # Định nghĩa quy tắc chuyển đổi tình trạng sinh viên
-        TAT_CA_TINH_TRANG_HOP_LE = {
-            "Đang học": ["Bảo lưu", "Tốt nghiệp", "Đình chỉ"],
-            "Bảo lưu": ["Đang học", "Đình chỉ"],
-            "Tốt nghiệp": [],  # Không thể thay đổi nữa
-            "Đình chỉ": ["Đang học"]
-        }
 
         for sv in self.danh_sach_sinh_vien:
             if sv.mssv == mssv_can_cap_nhat:

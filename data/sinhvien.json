@@ -2,20 +2,20 @@
     {
         "mssv": "SV001",
         "ho_ten": "Võ Lê Việt Tú",
-        "ngay_sinh": "27/02/2005",
-        "gioi_tinh": "Khác",
+        "ngay_sinh": "2004/03/03",
+        "gioi_tinh": "Trống",
         "khoa": "Khoa Luật",
         "khoa_hoc": "K21",
         "chuong_trinh": "Chất lượng cao",
         "dia_chi": "227 Nguyễn Văn Cừ",
-        "email": "nnnpuyen@example.com",
+        "email": "nnnpuyen@student.university.edu.vn",
         "sdt": "0987654321",
         "tinh_trang": "Đang học"
     },
     {
         "mssv": "SV002",
         "ho_ten": "Lưu Thanh Thúy",
-        "ngay_sinh": "16/01/2002",
+        "ngay_sinh": "2002/01/16",
         "gioi_tinh": "Nữ",
         "khoa": "Khoa Tiếng Anh thương mại",
         "khoa_hoc": "K18",
@@ -28,7 +28,7 @@
     {
         "mssv": "SV005",
         "ho_ten": "Lê Minh Khuê",
-        "ngay_sinh": "25/12/2003",
+        "ngay_sinh": "2003/12/25",
         "gioi_tinh": "Nữ",
         "khoa": "Khoa Báo Chí",
         "khoa_hoc": "K23",
@@ -41,7 +41,7 @@
     {
         "mssv": "SV010",
         "ho_ten": "Lương Khải Nguyên",
-        "ngay_sinh": "27/02/2003",
+        "ngay_sinh": "1998/02/27",
         "gioi_tinh": "Nam",
         "khoa": "Khoa Luật",
         "khoa_hoc": "K19",
@@ -49,6 +49,19 @@
         "dia_chi": "456 Hoàng Sa",
         "email": "nkluong@student.university.edu.vn",
         "sdt": "0987789987",
+        "tinh_trang": "Đang học"
+    },
+    {
+        "mssv": "SV011",
+        "ho_ten": "Lương Khải Võ",
+        "ngay_sinh": "2001/02/27",
+        "gioi_tinh": "Nam",
+        "khoa": "Khoa Luật",
+        "khoa_hoc": "2021",
+        "chuong_trinh": "Chất lượng cao",
+        "dia_chi": "Kệ tao đi ba",
+        "email": "lknasd@student.university.edu.vn",
+        "sdt": "0372904401",
         "tinh_trang": "Đang học"
     }
 ]

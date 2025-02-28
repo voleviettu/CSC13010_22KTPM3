@@ -125,22 +125,6 @@ Hiển thị thông tin phiên bản của chương trình từ file [version.tx
 
 ---
 
-## Test tính năng import dữ liệu
-
-### Import từ file CSV
-
-1. Chọn "1. Quản lý sinh viên" từ menu chính.
-2. Chọn "6. Import/Export dữ liệu" từ menu quản lý sinh viên.
-3. Chọn "1. Import từ file CSV".
-4. Nhập tên file [student.csv] và nhấn Enter.
-
-### Import từ file JSON
-
-1. Chọn "1. Quản lý sinh viên" từ menu chính.
-2. Chọn "6. Import/Export dữ liệu" từ menu quản lý sinh viên.
-3. Chọn "2. Import từ file JSON".
-4. Nhập tên file [student.json] và nhấn Enter.
-
 ## Giao diện
 
 - Xem giao diện trong folder images.
