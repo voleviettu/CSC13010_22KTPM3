@@ -119,6 +119,37 @@ Khi chạy chương trình, bạn sẽ thấy menu chính với các lựa chọ
 2. **Sửa tình trạng**: Chọn tình trạng cần sửa, nhập tên tình trạng mới và nhấn nút "Sửa tình trạng".
 3. **Hiển thị danh sách tình trạng**: Hiển thị danh sách tất cả các tình trạng hiện có.
 
+### Xuất Giấy Xác Nhận Tình Trạng Sinh Viên
+
+Chức năng này cho phép bạn xuất giấy xác nhận tình trạng sinh viên ra file định dạng Markdown (.md) hoặc HTML (.html).
+
+**Các bước thực hiện:**
+
+1.  **Chọn "XUẤT GIẤY XÁC NHẬN" từ menu bên trái.**
+
+2.  **Nhập Mã số Sinh viên (MSSV):**
+    *   Nhập MSSV của sinh viên cần xuất giấy xác nhận vào ô "Nhập MSSV cần xuất giấy xác nhận".
+
+3.  **Tìm kiếm sinh viên:**
+    *   Nhấn nút "Tìm kiếm sinh viên".
+    *   Nếu tìm thấy sinh viên, thông tin chi tiết của sinh viên sẽ hiển thị bên dưới.  Nếu không tìm thấy, một thông báo lỗi sẽ xuất hiện.
+
+4.  **Điền thông tin xác nhận:**
+    *   **Mục đích xác nhận:** Chọn một trong các mục đích có sẵn (Vay vốn ngân hàng, Tạm hoãn nghĩa vụ quân sự, Xin việc/Thực tập) hoặc chọn "Khác" và nhập mục đích cụ thể vào ô nhập liệu hiện ra.
+    *   **Thời hạn giấy xác nhận:** Chọn ngày hết hạn của giấy xác nhận bằng cách sử dụng công cụ chọn ngày.
+    *   **Định dạng file:** Chọn định dạng file bạn muốn xuất ("MD" cho Markdown hoặc "HTML" cho HTML).
+
+5.  **Xuất giấy xác nhận:**
+    *   Nhấn nút "Xuất Giấy Xác Nhận".
+    *   Nếu không có lỗi, một nút "Tải xuống (MD)" hoặc "Tải xuống (HTML)" sẽ xuất hiện.  Nhấn vào nút này để tải file về máy.
+    * File tải về có tên dạng: `GiayXacNhan_MSSV_NgayGio.md` hoặc `GiayXacNhan_MSSV_NgayGio.html`.
+
+**Lưu ý:**
+
+*   Đảm bảo rằng bạn đã nhập đúng MSSV và thông tin sinh viên đã có trong hệ thống.
+*   Kiểm tra kỹ các thông tin đã chọn trước khi nhấn nút "Xuất Giấy Xác Nhận".
+*   File tải về sẽ được lưu vào thư mục "Downloads" (hoặc thư mục tải xuống mặc định) của trình duyệt.
+
 ### Thông Tin Phiên Bản
 
 Hiển thị thông tin phiên bản của chương trình từ file [version.txt](http://_vscodecontentref_/5).
