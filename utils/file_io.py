@@ -1,6 +1,7 @@
 import json
 import csv
 import logging
+import datetime
 from models.sinhvien import SinhVien
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', handlers=[
@@ -67,7 +68,13 @@ def load_sinhvien_data(filename="data/sinhvien", file_type="json"):
             return []
 
         logging.info(f"Đã tải dữ liệu sinh viên từ {filename}")
-        return [SinhVien(**item) for item in data]
+        sinhviens = []
+        for item in data:
+            # Chuyển đổi creation_datetime từ string (ISO format) về datetime object
+            if 'creation_datetime' in item:  # Kiểm tra xem có trường này không
+                item['creation_datetime'] = datetime.datetime.fromisoformat(item['creation_datetime'])
+            sinhviens.append(SinhVien(**item))  # Tạo đối tượng SinhVien
+        return sinhviens
     except Exception as e:
         logging.error(f"Lỗi khi tải dữ liệu sinh viên: {e}")
         return []

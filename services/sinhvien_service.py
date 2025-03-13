@@ -1,5 +1,6 @@
 import json
 import logging
+import datetime
 import pandas as pd
 from models.sinhvien import SinhVien
 from utils.validation import kiem_tra_email, kiem_tra_sdt, kiem_tra_ngay_sinh, kiem_tra_trang_thai
@@ -8,6 +9,9 @@ from services.khoa_service import KhoaService
 from services.chuongtrinh_service import ChuongTrinhService
 from services.tinhtrang_service import TinhTrangService
 
+with open('config.json', 'r', encoding='utf-8') as f:
+    config = json.load(f)
+DELETION_TIME_LIMIT = config['DELETION_TIME_LIMIT']
 
 logging.basicConfig(
     level=logging.INFO,
@@ -34,12 +38,6 @@ class SinhVienService:
         logging.info(f"Đã tải dữ liệu sinh viên từ {sinhvien_data_file}")
 
     def them_sinh_vien(self, student_data: dict):
-        """
-        Thêm sinh viên mới dựa trên dữ liệu truyền vào (dạng dict).
-        student_data cần chứa các key:
-          - mssv, ho_ten, ngay_sinh, gioi_tinh, khoa, khoa_hoc,
-            chuong_trinh, dia_chi, email, sdt, tinh_trang
-        """
         mssv = student_data.get("mssv")
         # Kiểm tra trùng MSSV
         if any(sv.mssv == mssv for sv in self.danh_sach_sinh_vien):
@@ -84,19 +82,26 @@ class SinhVienService:
         return "Thêm sinh viên thành công!"
 
     def xoa_sinh_vien(self, mssv_can_xoa: str):
-        """
-        Xóa sinh viên dựa theo MSSV.
-        """
         for i, sv in enumerate(self.danh_sach_sinh_vien):
             if sv.mssv == mssv_can_xoa:
-                del self.danh_sach_sinh_vien[i]
-                self.save_data()
-                logging.info(f"Đã xóa sinh viên có MSSV {mssv_can_xoa}")
-                return f"Đã xóa sinh viên có MSSV {mssv_can_xoa}"
+                # Kiểm tra thời gian tạo
+                time_difference = datetime.datetime.now() - sv.creation_datetime
+                if time_difference.total_seconds() / 60 <= DELETION_TIME_LIMIT:
+                    del self.danh_sach_sinh_vien[i]
+                    self.save_data()
+                    logging.info(f"Đã xóa sinh viên có MSSV {mssv_can_xoa}")
+                    return f"Đã xóa sinh viên có MSSV {mssv_can_xoa}"
+                else:
+                    logging.warning(
+                        f"Không thể xóa sinh viên có MSSV {mssv_can_xoa} vì đã quá thời gian quy định."
+                    )
+                    return (
+                        f"Không thể xóa sinh viên có MSSV {mssv_can_xoa} vì đã quá thời gian quy định ("
+                        f"{DELETION_TIME_LIMIT} phút)."
+                    )
+
         logging.warning(f"Không tìm thấy sinh viên có MSSV {mssv_can_xoa}")
         return f"Không tìm thấy sinh viên có MSSV {mssv_can_xoa}"
-
-    import logging
 
     def cap_nhat_sinh_vien(self, mssv_can_cap_nhat: str, updated_data: dict):
         """

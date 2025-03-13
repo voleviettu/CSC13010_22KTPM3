@@ -6,5 +6,6 @@
         "Bảo lưu": ["Bảo lưu", "Đang học", "Đã tốt nghiệp", "Đình chỉ"],
         "Đã tốt nghiệp": ["Đã tốt nghiệp", "Đình chỉ"],
         "Đình chỉ": ["Đình chỉ", "Đang học", "Bảo lưu"]
-    }
+    },
+    "DELETION_TIME_LIMIT": 30
 }

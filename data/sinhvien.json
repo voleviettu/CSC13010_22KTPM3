@@ -1,18 +1,5 @@
 [
     {
-        "mssv": "SV001",
-        "ho_ten": "Võ Lê Việt Tú",
-        "ngay_sinh": "2004/03/03",
-        "gioi_tinh": "Trống",
-        "khoa": "Khoa Luật",
-        "khoa_hoc": "K21",
-        "chuong_trinh": "Chất lượng cao",
-        "dia_chi": "227 Nguyễn Văn Cừ",
-        "email": "nnnpuyen@student.university.edu.vn",
-        "sdt": "0987654321",
-        "tinh_trang": "Đang học"
-    },
-    {
         "mssv": "SV002",
         "ho_ten": "Lưu Thanh Thúy",
         "ngay_sinh": "2002/01/16",
@@ -23,7 +10,8 @@
         "dia_chi": "432 Cao Thắng",
         "email": "ltthuy161@example.com",
         "sdt": "0912345678",
-        "tinh_trang": "Đã tốt nghiệp"
+        "tinh_trang": "Đã tốt nghiệp",
+        "creation_datetime": "2025-03-11T17:53:20.586422"
     },
     {
         "mssv": "SV005",
@@ -36,7 +24,8 @@
         "dia_chi": "12 Điện Biên Phủ",
         "email": "lewikhue@gmail.com",
         "sdt": "0987654345",
-        "tinh_trang": "Tạm dừng học"
+        "tinh_trang": "Tạm dừng học",
+        "creation_datetime": "2025-03-12T17:53:20.586422"
     },
     {
         "mssv": "SV010",
@@ -49,7 +38,8 @@
         "dia_chi": "456 Hoàng Sa",
         "email": "nkluong@student.university.edu.vn",
         "sdt": "0987789987",
-        "tinh_trang": "Đang học"
+        "tinh_trang": "Đang học",
+        "creation_datetime": "2025-03-12T17:53:20.586422"
     },
     {
         "mssv": "SV011",
@@ -62,6 +52,7 @@
         "dia_chi": "Kệ tao đi ba",
         "email": "lknasd@student.university.edu.vn",
         "sdt": "0372904401",
-        "tinh_trang": "Đang học"
+        "tinh_trang": "Đang học",
+        "creation_datetime": "2025-03-12T17:53:20.586422"
     }
 ]

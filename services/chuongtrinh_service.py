@@ -9,9 +9,11 @@ logging.basicConfig(
 )
 
 class ChuongTrinhService:
-    def __init__(self, chuong_trinh_file="data/chuongtrinh.json"):
+    def __init__(self, chuong_trinh_file="data/chuongtrinh.json", sinh_vien_file="data/sinhvien.json"):
         self.chuong_trinh_file = chuong_trinh_file
+        self.sinh_vien_file = sinh_vien_file
         self.danh_sach_chuong_trinh = load_json_file(chuong_trinh_file)
+        self.danh_sach_sinh_vien = load_json_file(sinh_vien_file)
         logging.info(f"Đã tải dữ liệu chương trình từ {chuong_trinh_file}")
 
     def them_chuong_trinh(self, ten_chuong_trinh_moi: str) -> str:
@@ -26,6 +28,20 @@ class ChuongTrinhService:
         self.save_data()
         logging.info(f"Đã thêm chương trình đào tạo '{ten_chuong_trinh_moi}' thành công.")
         return f"Đã thêm chương trình đào tạo '{ten_chuong_trinh_moi}' thành công."
+    
+    def xoa_chuong_trinh(self, ten_chuong_trinh: str) -> str:
+        """
+        Xóa chương trình đào tạo nếu không có sinh viên nào theo học.
+        """
+        if ten_chuong_trinh not in self.danh_sach_chuong_trinh:
+            logging.warning(f"Tên chương trình đào tạo '{ten_chuong_trinh}' không tồn tại.")
+            return f"Tên chương trình đào tạo '{ten_chuong_trinh}' không tồn tại."
+
+        # Kiểm tra xem có sinh viên nào đang theo học chương trình này không
+        for sv in self.danh_sach_sinh_vien:
+            if sv.get("chuong_trinh") == ten_chuong_trinh:
+                logging.warning(f"Không thể xóa chương trình '{ten_chuong_trinh}' vì có sinh viên đang theo học.")
+                return f"Không thể xóa chương trình '{ten_chuong_trinh}' vì có sinh viên đang theo học."
 
     def sua_chuong_trinh(self, ten_chuong_trinh_cu: str, ten_chuong_trinh_moi: str) -> str:
         """

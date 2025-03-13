@@ -9,9 +9,11 @@ logging.basicConfig(
 )
 
 class TinhTrangService:
-    def __init__(self, tinh_trang_file="data/tinhtrang.json"):
+    def __init__(self, tinh_trang_file="data/tinhtrang.json", sinh_vien_file="data/sinhvien.json"):
         self.tinh_trang_file = tinh_trang_file
+        self.sinh_vien_file = sinh_vien_file
         self.danh_sach_tinh_trang = load_json_file(tinh_trang_file)
+        self.danh_sach_sinh_vien = load_json_file(sinh_vien_file)
         logging.info(f"Đã tải dữ liệu tình trạng từ {tinh_trang_file}")
 
     def them_tinh_trang(self, ten_tinh_trang_moi: str) -> str:
@@ -43,6 +45,21 @@ class TinhTrangService:
         self.save_data()
         logging.info(f"Đã sửa tình trạng '{ten_tinh_trang_cu}' thành '{ten_tinh_trang_moi}'.")
         return f"Đã sửa tình trạng '{ten_tinh_trang_cu}' thành '{ten_tinh_trang_moi}'."
+    
+    def xoa_tinh_trang(self, ten_tinh_trang: str) -> str:
+        if ten_tinh_trang not in self.danh_sach_tinh_trang:
+            logging.warning(f"Tên tình trạng '{ten_tinh_trang}' không tồn tại.")
+            return f"Tên tình trạng '{ten_tinh_trang}' không tồn tại."
+        
+        for sv in self.danh_sach_sinh_vien:
+            if sv.get("tinh_trang") == ten_tinh_trang:
+                logging.warning(f"Không thể xóa tình trạng '{ten_tinh_trang}' vì có sinh viên đang ở tình trạng này.")
+                return f"Không thể xóa tình trạng '{ten_tinh_trang}' vì có sinh viên đang ở tình trạng này."
+        
+        self.danh_sach_tinh_trang.remove(ten_tinh_trang)
+        self.save_data()
+        logging.info(f"Đã xóa tình trạng '{ten_tinh_trang}' thành công.")
+        return f"Đã xóa tình trạng '{ten_tinh_trang}' thành công."
 
     def hien_thi_danh_sach_tinh_trang(self) -> list:
         """

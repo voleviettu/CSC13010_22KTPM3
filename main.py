@@ -257,7 +257,7 @@ def menu_sinh_vien(service):
 def menu_khoa(service):
     operation = st.selectbox(
         "Chọn thao tác", 
-        ("Thêm khoa", "Sửa khoa", "Hiển thị danh sách khoa")
+        ("Thêm khoa", "Xóa khoa", "Sửa khoa", "Hiển thị danh sách khoa")
     )
     
     if operation == "Thêm khoa":
@@ -270,6 +270,20 @@ def menu_khoa(service):
             else:
                 st.error(result)
     
+    elif operation == "Xóa khoa":
+        st.subheader("Xóa khoa")
+        ds_khoa = service.hien_thi_danh_sach_khoa()
+        if ds_khoa:
+            ten_khoa = st.selectbox("Chọn khoa cần xóa", ds_khoa, key="xoa_khoa")
+            if st.button("Xóa khoa"):
+                result = service.xoa_khoa(ten_khoa)
+                if "thành công" in result.lower():
+                    st.success(result)
+                else:
+                    st.error(result)
+        else:
+            st.info("Danh sách khoa rỗng. Không có khoa nào để xóa.")
+
     elif operation == "Sửa khoa":
         st.subheader("Sửa khoa")
         # Lấy danh sách khoa để hiển thị dưới dạng dropdown
@@ -298,7 +312,7 @@ def menu_khoa(service):
 def menu_chuong_trinh(service):
     operation = st.selectbox(
         "Chọn thao tác", 
-        ("Thêm chương trình đào tạo", "Sửa chương trình đào tạo", "Hiển thị danh sách chương trình đào tạo")
+        ("Thêm chương trình đào tạo", "Xóa chương trình đào tạo", "Sửa chương trình đào tạo", "Hiển thị danh sách chương trình đào tạo")
     )
     
     if operation == "Thêm chương trình đào tạo":
@@ -310,6 +324,20 @@ def menu_chuong_trinh(service):
                 st.success(result)
             else:
                 st.error(result)
+
+    elif operation == "Xóa chương trình đào tạo":
+        st.subheader("Xóa chương trình đào tạo")
+        ds_ct = service.hien_thi_danh_sach_chuong_trinh()
+        if ds_ct:
+            ten_ct = st.selectbox("Chọn chương trình cần xóa", ds_ct, key="xoa_ct")
+            if st.button("Xóa chương trình đào tạo"):
+                result = service.xoa_chuong_trinh(ten_ct)
+                if "thành công" in result.lower():
+                    st.success(result)
+                else:
+                    st.error(result)
+        else:
+            st.info("Danh sách chương trình đào tạo rỗng.")
     
     elif operation == "Sửa chương trình đào tạo":
         st.subheader("Sửa chương trình đào tạo")
@@ -338,7 +366,7 @@ def menu_chuong_trinh(service):
 def menu_tinh_trang(service):
     operation = st.selectbox(
         "Chọn thao tác", 
-        ("Thêm tình trạng", "Sửa tình trạng", "Hiển thị danh sách tình trạng")
+        ("Thêm tình trạng", "Xóa tình trạng", "Sửa tình trạng", "Hiển thị danh sách tình trạng")
     )
     
     if operation == "Thêm tình trạng":
@@ -351,6 +379,20 @@ def menu_tinh_trang(service):
             else:
                 st.error(result)
     
+    elif operation == "Xóa tình trạng":
+        st.subheader("Xóa tình trạng")
+        ds_tt = service.hien_thi_danh_sach_tinh_trang()
+        if ds_tt:
+            ten_tt = st.selectbox("Chọn tình trạng cần xóa", ds_tt, key="xoa_tt")
+            if st.button("Xóa tình trạng"):
+                result = service.xoa_tinh_trang(ten_tt)
+                if "thành công" in result.lower():
+                    st.success(result)
+                else:
+                    st.error(result)
+        else:
+            st.info("Danh sách tình trạng rỗng.")
+
     elif operation == "Sửa tình trạng":
         st.subheader("Sửa tình trạng")
         ds_tt = service.hien_thi_danh_sach_tinh_trang()

@@ -1,5 +1,5 @@
 import json
-
+import datetime
 
 class SinhVien:
     def __init__(
@@ -15,6 +15,7 @@ class SinhVien:
         email,
         sdt,
         tinh_trang,
+        creation_datetime=None,
     ):
         self.mssv = mssv
         self.ho_ten = ho_ten
@@ -27,6 +28,7 @@ class SinhVien:
         self.email = email
         self.sdt = sdt
         self.tinh_trang = tinh_trang
+        self.creation_datetime = creation_datetime or datetime.datetime.now()
 
     def __str__(self):
         return json.dumps(self.to_dict(), ensure_ascii=False, indent=4)
@@ -44,4 +46,5 @@ class SinhVien:
             "email": self.email,
             "sdt": self.sdt,
             "tinh_trang": self.tinh_trang,
+            "creation_datetime": self.creation_datetime.isoformat(),
         }
