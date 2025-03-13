@@ -552,3 +552,362 @@
 2025-03-13 16:19:41,534 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
 2025-03-13 16:19:41,534 - INFO - Đã hiển thị danh sách tình trạng.
 2025-03-13 16:19:41,535 - WARNING - Không thể xóa tình trạng 'Đang học' vì có sinh viên đang ở tình trạng này.
+2025-03-13 17:09:27,405 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:27,408 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:09:27,408 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:09:27,409 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:27,409 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:09:27,409 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:09:27,410 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:27,410 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:09:27,410 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:09:27,410 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:27,411 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:09:27,411 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:09:27,411 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:09:27,411 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:27,412 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:09:27,412 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:09:27,412 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:27,412 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:09:27,412 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:09:27,412 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:27,413 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:09:30,613 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:30,613 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:09:30,613 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:09:30,613 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:30,613 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:09:30,613 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:09:30,613 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:30,615 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:09:30,615 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:09:30,615 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:30,615 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:09:30,615 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:09:30,615 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:09:30,615 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:30,615 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:09:30,615 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:09:30,615 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:30,615 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:09:30,615 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:09:30,615 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:30,616 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:09:38,571 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:38,571 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:09:38,572 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:09:38,572 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:38,572 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:09:38,572 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:09:38,572 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:38,572 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:09:38,572 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:09:38,572 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:38,573 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:09:38,573 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:09:38,573 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:09:38,573 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:38,573 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:09:38,573 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:09:38,573 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:38,573 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:09:38,573 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:09:38,573 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:38,574 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:09:38,575 - INFO - Đã hiển thị danh sách sinh viên.
+2025-03-13 17:09:42,225 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:42,225 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:09:42,225 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:09:42,225 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:42,225 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:09:42,225 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:09:42,227 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:42,227 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:09:42,227 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:09:42,227 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:42,227 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:09:42,227 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:09:42,227 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:09:42,227 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:42,227 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:09:42,227 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:09:42,227 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:42,229 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:09:42,229 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:09:42,229 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:42,229 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:09:52,332 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:52,342 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:09:52,342 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:09:52,342 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:52,342 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:09:52,342 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:09:52,342 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:52,343 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:09:52,343 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:09:52,343 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:52,343 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:09:52,343 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:09:52,343 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:09:52,343 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:52,343 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:09:52,343 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:09:52,343 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:52,344 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:09:52,344 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:09:52,344 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:52,344 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:09:52,435 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:52,435 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:09:52,435 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:09:52,435 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:52,435 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:09:52,435 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:09:52,435 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:52,435 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:09:52,435 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:09:52,435 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:52,435 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:09:52,435 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:09:52,435 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:09:52,435 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:52,435 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:09:52,435 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:09:52,435 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:52,435 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:09:52,435 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:09:52,435 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:09:52,435 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:11:05,023 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:05,024 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:11:05,024 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:11:05,024 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:05,024 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:11:05,024 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:11:05,024 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:05,024 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:11:05,024 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:11:05,024 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:05,024 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:11:05,024 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:11:05,024 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:11:05,025 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:05,025 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:11:05,025 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:11:05,025 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:05,025 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:11:05,025 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:11:05,025 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:05,025 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:11:07,875 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:07,875 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:11:07,875 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:11:07,876 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:07,876 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:11:07,876 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:11:07,876 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:07,876 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:11:07,876 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:11:07,876 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:07,876 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:11:07,876 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:11:07,876 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:11:07,877 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:07,877 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:11:07,877 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:11:07,877 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:07,877 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:11:07,877 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:11:07,877 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:07,877 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:11:12,438 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:12,438 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:11:12,438 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:11:12,438 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:12,439 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:11:12,439 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:11:12,439 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:12,439 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:11:12,439 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:11:12,439 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:12,439 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:11:12,439 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:11:12,439 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:11:12,439 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:12,440 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:11:12,440 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:11:12,440 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:12,440 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:11:12,440 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:11:12,440 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:12,440 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:11:12,537 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:12,537 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:11:12,537 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:11:12,537 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:12,537 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:11:12,537 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:11:12,537 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:12,537 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:11:12,537 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:11:12,537 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:12,537 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:11:12,537 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:11:12,537 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:11:12,537 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:12,537 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:11:12,537 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:11:12,537 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:12,537 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:11:12,537 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:11:12,537 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:12,537 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:11:12,537 - INFO - Tìm thấy 1 sinh viên.
+2025-03-13 17:11:32,637 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:32,637 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:11:32,637 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:11:32,637 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:32,637 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:11:32,638 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:11:32,638 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:32,638 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:11:32,638 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:11:32,638 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:32,638 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:11:32,638 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:11:32,638 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:11:32,638 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:32,638 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:11:32,640 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:11:32,640 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:32,640 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:11:32,640 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:11:32,640 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:32,640 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:11:39,724 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:39,724 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:11:39,724 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:11:39,724 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:39,724 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:11:39,724 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:11:39,726 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:39,726 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:11:39,726 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:11:39,726 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:39,726 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:11:39,726 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:11:39,726 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:11:39,726 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:39,726 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:11:39,726 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:11:39,726 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:39,726 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:11:39,726 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:11:39,726 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:39,726 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:11:40,812 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:40,812 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:11:40,812 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:11:40,812 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:40,812 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:11:40,812 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:11:40,827 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:40,827 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:11:40,827 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:11:40,827 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:40,827 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:11:40,828 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:11:40,828 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:11:40,828 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:40,828 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:11:40,828 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:11:40,828 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:40,829 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:11:40,829 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:11:40,829 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:40,829 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:11:43,231 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:43,231 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:11:43,243 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:11:43,243 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:43,243 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:11:43,243 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:11:43,243 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:43,243 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:11:43,243 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:11:43,244 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:43,244 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:11:43,244 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:11:43,244 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:11:43,244 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:43,244 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:11:43,244 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:11:43,245 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:43,245 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:11:43,245 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:11:43,245 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:43,245 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:11:54,235 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:54,235 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:11:54,235 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:11:54,235 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:54,235 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:11:54,235 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:11:54,235 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:54,235 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:11:54,235 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:11:54,235 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:54,235 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:11:54,235 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:11:54,235 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:11:54,235 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:54,235 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:11:54,235 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:11:54,235 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:54,235 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:11:54,235 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:11:54,235 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:54,235 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:11:55,340 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:55,340 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:11:55,340 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:11:55,340 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:55,340 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:11:55,340 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:11:55,340 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:55,340 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:11:55,340 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:11:55,340 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:55,340 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:11:55,340 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:11:55,340 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:11:55,340 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:55,340 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:11:55,340 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:11:55,340 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:55,340 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:11:55,340 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:11:55,340 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:55,340 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:11:56,543 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:56,543 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:11:56,544 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:11:56,544 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:56,544 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:11:56,544 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:11:56,544 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:56,544 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:11:56,544 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:11:56,544 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:56,545 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json
+2025-03-13 17:11:56,545 - INFO - Đã tải dữ liệu sinh viên từ data/sinhvien
+2025-03-13 17:11:56,545 - INFO - Đang tải file JSON: data/khoa.json
+2025-03-13 17:11:56,545 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:56,545 - INFO - Đã tải dữ liệu khoa từ data/khoa.json
+2025-03-13 17:11:56,545 - INFO - Đang tải file JSON: data/chuongtrinh.json
+2025-03-13 17:11:56,545 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:56,545 - INFO - Đã tải dữ liệu chương trình từ data/chuongtrinh.json
+2025-03-13 17:11:56,545 - INFO - Đang tải file JSON: data/tinhtrang.json
+2025-03-13 17:11:56,545 - INFO - Đang tải file JSON: data/sinhvien.json
+2025-03-13 17:11:56,545 - INFO - Đã tải dữ liệu tình trạng từ data/tinhtrang.json

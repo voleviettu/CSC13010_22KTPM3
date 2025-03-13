@@ -214,3 +214,137 @@ class SinhVienService:
         self.save_data(filename, file_type)
         logging.info(f"Export thành công ra file {filename}.")
         return f"Export thành công ra file {filename}."
+    
+    def xuat_giay_xac_nhan(self, student_data: dict, purpose: str, expiry_date: str, file_type: str):
+        """
+        Xuất giấy xác nhận tình trạng sinh viên.
+
+        Args:
+            student_data: Dictionary chứa thông tin sinh viên.
+            purpose: Mục đích xác nhận.
+            expiry_date: Ngày hết hạn (dd/mm/yyyy).
+            file_type: "md" hoặc "html".
+
+        Returns:
+            Tuple: (dữ liệu file, tên file) hoặc (None, None) nếu có lỗi.
+        """
+        # Tạo nội dung giấy xác nhận
+        noi_dung = self._tao_noi_dung_giay_xac_nhan(student_data, purpose, expiry_date)
+
+        # Tạo tên file
+        ten_file = f"GiayXacNhan_{student_data['mssv']}_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}.{file_type}"
+
+        try:
+            if file_type == "md":
+                # Xuất ra Markdown
+                return noi_dung.encode('utf-8'), ten_file  # Encode sang UTF-8
+            elif file_type == "html":
+                # Xuất ra HTML
+                noi_dung_html = self._xuat_html(noi_dung)
+                return noi_dung_html.encode('utf-8'), ten_file
+            else:
+                logging.error("Định dạng file không hỗ trợ.")
+                return None, None
+        except Exception as e:
+            logging.error(f"Lỗi khi xuất file: {e}")
+            return None, None
+
+    def _tao_noi_dung_giay_xac_nhan(self, student_data: dict, purpose: str, expiry_date: str) -> str:
+        # Phần này giữ nguyên như trước, tạo nội dung Markdown
+        tinh_trang_text = ""
+        if student_data["tinh_trang"] == "Đang học":
+            tinh_trang_text = "- Đang theo học"
+        elif student_data["tinh_trang"] == "Đã tốt nghiệp":
+            tinh_trang_text = "- Đã tốt nghiệp"
+        elif student_data["tinh_trang"] == "Đã thôi học":
+            tinh_trang_text = "- Đã thôi học"
+        elif student_data["tinh_trang"] == "Tạm dừng học":
+            tinh_trang_text = "- Tạm dừng học"
+        elif student_data["tinh_trang"] == "Bảo lưu":
+            tinh_trang_text = "- Bảo lưu"
+        elif student_data["tinh_trang"] == "Đình chỉ":
+            tinh_trang_text = "- Đình chỉ"
+
+
+        muc_dich_text = ""
+        if purpose == "Vay vốn ngân hàng":
+            muc_dich_text = "- Xác nhận đang học để vay vốn ngân hàng"
+        elif purpose == "Tạm hoãn nghĩa vụ quân sự":
+            muc_dich_text = "- Xác nhận làm thủ tục tạm hoãn nghĩa vụ quân sự"
+        elif purpose == "Xin việc/Thực tập":
+            muc_dich_text = "- Xác nhận làm hồ sơ xin việc / thực tập"
+        else:
+            muc_dich_text = f"- {purpose}"
+
+        noi_dung = f"""
+**TRƯỜNG ĐẠI HỌC KHOA HỌC TỰ NHIÊN**
+**PHÒNG ĐÀO TẠO**
+📍 Địa chỉ: 227 Nguyễn Văn Cừ, Quận 5, Thành phố Hồ Chí Minh
+📞 Điện thoại: 0123456789 | 📧 Email: hcmus@gmail.edu.vn
+
+---
+
+### **GIẤY XÁC NHẬN TÌNH TRẠNG SINH VIÊN**
+
+Trường Đại học Khoa học Tự Nhiên xác nhận:
+
+**1. Thông tin sinh viên:**
+- **Họ và tên:** {student_data['ho_ten']}
+- **Mã số sinh viên:** {student_data['mssv']}
+- **Ngày sinh:** {datetime.datetime.strptime(student_data['ngay_sinh'], '%Y/%m/%d').strftime('%d/%m/%Y')}
+- **Giới tính:** {student_data['gioi_tinh']}
+- **Khoa:** {student_data['khoa']}
+- **Chương trình đào tạo:** {student_data['chuong_trinh']}
+- **Khóa:** {student_data['khoa_hoc']}
+
+**2. Tình trạng sinh viên hiện tại:**
+{tinh_trang_text}
+
+**3. Mục đích xác nhận:**
+{muc_dich_text}
+
+**4. Thời gian cấp giấy:**
+- Giấy xác nhận có hiệu lực đến ngày: {expiry_date}
+
+📍 **Xác nhận của Trường Đại học Khoa học Tự nhiên**
+
+📅 Ngày cấp: {datetime.datetime.now().strftime('%d/%m/%Y')}
+
+🖋 **Trưởng Phòng Đào Tạo**
+(Ký, ghi rõ họ tên, đóng dấu)
+
+---
+"""
+        return noi_dung
+
+    def _xuat_html(self, noi_dung: str):
+        from markdown import markdown
+
+        # Chuyển đổi nội dung Markdown sang HTML
+        html = markdown(noi_dung)
+
+        # Thêm một chút CSS để định dạng cơ bản (tùy chọn)
+        html_with_style = f"""
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Giấy Xác Nhận Tình Trạng Sinh Viên</title>
+    <style>
+        body {{
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }}
+        h1, h3 {{
+            text-align: center;
+        }}
+        .bold {{
+            font-weight: bold;
+        }}
+    </style>
+</head>
+<body>
+    {html}
+</body>
+</html>
+"""
+        return html_with_style

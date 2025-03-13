@@ -61,7 +61,7 @@ def menu_import_export(service):
 def menu_sinh_vien(service):
     operation = st.selectbox("Chọn thao tác", 
                              ("Thêm sinh viên", "Xóa sinh viên", "Cập nhật thông tin sinh viên", 
-                              "Tìm kiếm sinh viên", "Hiển thị danh sách sinh viên", "Import/Export dữ liệu"))
+                              "Tìm kiếm sinh viên", "Hiển thị danh sách sinh viên", "Import/Export dữ liệu", "Xuất giấy xác nhận"))
     
     if operation == "Thêm sinh viên":
         st.subheader("Thêm sinh viên")
@@ -253,6 +253,76 @@ def menu_sinh_vien(service):
     
     elif operation == "Import/Export dữ liệu":
         menu_import_export(service)
+
+    elif operation == "Xuất giấy xác nhận":
+        st.markdown("<h2 style='text-align:center;'>🖨️ XUẤT GIẤY XÁC NHẬN</h2>", unsafe_allow_html=True)
+
+        # 1. Ô nhập MSSV
+        mssv_xac_nhan = st.text_input("Nhập MSSV cần xuất giấy xác nhận")
+
+        # 2. Nút Tìm kiếm
+        if st.button("Tìm kiếm sinh viên"):
+            # Gọi service để tìm sinh viên
+            sinh_vien_can_xuat = service.tim_kiem_sinh_vien(criteria='mssv', value=mssv_xac_nhan)
+            if sinh_vien_can_xuat:
+                st.session_state.sinh_vien_can_xuat = sinh_vien_can_xuat[0]  # Lưu vào session_state
+                st.success("Tìm thấy sinh viên!")
+            else:
+                st.error("Không tìm thấy sinh viên với MSSV này.")
+                st.session_state.sinh_vien_can_xuat = None
+
+        # 3. Hiển thị thông tin (nếu tìm thấy)
+        if st.session_state.get("sinh_vien_can_xuat"):
+            st.subheader("Thông tin sinh viên")
+            sv = st.session_state.sinh_vien_can_xuat
+            st.write(f"- **Họ và tên:** {sv['ho_ten']}")
+            st.write(f"- **MSSV:** {sv['mssv']}")
+            st.write(f"- **Ngày sinh:** {datetime.datetime.strptime(sv['ngay_sinh'], '%Y/%m/%d').strftime('%d/%m/%Y')}")  # Định dạng lại ngày
+            st.write(f"- **Giới tính:** {sv['gioi_tinh']}")
+            st.write(f"- **Khoa:** {sv['khoa']}")
+            st.write(f"- **Chương trình:** {sv['chuong_trinh']}")
+            st.write(f"- **Tình trạng:** {sv['tinh_trang']}")
+
+            # 4. Các lựa chọn xuất giấy
+            st.subheader("Tùy chọn xuất giấy")
+            col1, col2, col3 = st.columns(3)
+            with col1:
+                muc_dich = st.selectbox("Mục đích xác nhận", [
+                    "Vay vốn ngân hàng",
+                    "Tạm hoãn nghĩa vụ quân sự",
+                    "Xin việc/Thực tập",
+                    "Khác"
+                ])
+                if muc_dich == "Khác":
+                    muc_dich_khac = st.text_input("Nhập mục đích khác")
+            with col2:
+                thoi_han = st.date_input("Thời hạn giấy xác nhận", value=datetime.date.today())
+            with col3:
+                dinh_dang = st.selectbox("Định dạng file", ["MD", "HTML"])
+
+            # 5. Nút Xuất giấy
+            if st.button("Xuất Giấy Xác Nhận"):
+                # Xử lý logic xuất file
+                if muc_dich == "Khác":
+                    muc_dich = muc_dich_khac
+
+                file_data, file_name = service.xuat_giay_xac_nhan(
+                    sv,
+                    muc_dich,
+                    thoi_han.strftime("%d/%m/%Y"),
+                    dinh_dang.lower()
+                )
+
+
+                if file_data:
+                        st.download_button(
+                        label=f"Tải xuống ({dinh_dang})",
+                        data=file_data,
+                        file_name=file_name,
+                        mime="text/markdown" if dinh_dang == "MD" else "text/html"
+                    )
+                else:
+                    st.error("Có lỗi xảy ra khi xuất file.")
 
 def menu_khoa(service):
     operation = st.selectbox(
